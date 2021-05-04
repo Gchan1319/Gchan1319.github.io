@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Google Chan v1.2</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/Sayu.jpg">
+</head>
+<body>
+  <div class="container">
+      <div id="a"></div>
+  <marquee id="song"></marquee>
+  <div id="side">
+    <div class="top-side">
+    <div class="i-user" id="i_user"></div>
+    <h4 id="sts">Belum Login</h4>
+    </div>
+    <div class="hmm" id="hmm1" onclick="T_ul()">
+      Pilih Karakter <p ondblclick="tot()" id="up" style="display: inline;"></p>
+    <ul id="ul1" class="a">
+      <li onclick="acak()"><a href="#">Acak Aja</a></li>
+      <li onclick="f1()"><a href="#">Yatogami Tohka</a></li>
+      <li onclick="f2()"><a href="#">Zero Two</a></li>
+      <li onclick="f3()"><a href="#">Nakano Ichika</a></li>
+      <li onclick="f4()"><a href="#">Nakano Nino</a></li>
+      <li onclick="f5()"><a href="#">Nakano Miku</a></li>
+      <li onclick="f6()"><a href="#">Nakano Yotsuba</a></li>
+      <li onclick="f7()"><a href="#">Nakano Itsuki</a></li>
+      <li onclick="f8()"><a href="#">Miyazono Kaori</a></li>
+      <li onclick="f9()"><a href="#">Mizuhara Chizuru</a></li>
+      <li onclick="f10()"><a href="#">Miyamizu Mitsuha</a></li>
+      <li onclick="f11()"><a href="#">Izumi Sagiri</a></li>
+      <li onclick="f12()"><a href="#">Toga Himiko</a></li>
+      <li onclick="f13()"><a href="#">Mashiro Shiina</a></li>
+      <li onclick="f14()"><a href="#">Akeno Himejima</a></li>
+      <li onclick="f15()"><a href="#">Yuzaki Tsukasa</a></li>
+      <li onclick="f16()"><a href="#">Asia Arigento</a></li>
+      <li onclick="f17()"><a href="#">Sayu Ogiwara</a></li>
+    </ul>
+    </div>
+    
+    <div class="hmm" id="donasi" onclick="T_ul2()">
+      Donasi <p id="up2" ondblclick="tot2()" style="display:inline;"></p>
+      <ul id="ul2">
+        <li><a href="#">Gopay</a></li>
+        <li><a href="#">Pulsa</a></li>
+        <li><a href="#">Saweria</a></li>
+        <li><a href="#">OVO</a></li>
+        <li><a href="#">Dana</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-side">
+      <p>Contact Me On :</p>
+      <a href="https://www.instagram.com/himitsu_000/"><img src="img/Ig.png"class="a" alt="fb" /></a>
+      <a href="https://github.com/Mr-ParadoX13"><img src="img/Git.png" alt="github" /></a>
+      <a href="https://api.whatsapp.com/send/?phone=6285895811075&text&app_absent=0"> <img src="img/wa.jpg" alt="wa" /></a>
+    </div>
+  </div>
+  
+  <!--- login --->
+  <div id="login">
+    <h1>Masukan Data Diri !</h1>
+    <form accept-charset="utf-8">
+    <label>Nama :</label>
+    <input type="text/submit/hidden/button/image" id="nama" value="" placeholder="masukan nama anda !" required/>
+    <label>Umur :</label>
+    <input name="" id="umur" value="" placeholder="masukan umur anda !" type="number" />
+    </form>
+    <button type="submit" onclick="flogin()">Selesai</button>
+  </div>
+  <nav class="cf">
+    <div id="btn_music">
+      <audio id="aud"></audio>
+      <button id="btn1"type="submit" onclick="playMusic()"</button>
+        <button type="submit" id="btn2" onclick="muteMusic()"></button>
+      
+    </div>
+    <a id="arti" href="#"><h1 id="welkom">Wellcome Senpai</h1></a>
+    <div id="menu">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.2em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1536 1280"><path d="M1536 1088v128q0 26-19 45t-45 19H64q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19H64q-26 0-45-19T0 704V576q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19H64q-26 0-45-19T0 192V64q0-26 19-45T64 0h1408q26 0 45 19t19 45z" fill="#626262"/>
+    </div>
+  </nav>
+  
+    <div class="header">
+      <img class="hero" id="hero">
+      <h1 id="hero_name"></h1>
+    </div>
+    <div class="konten cf">
+          <div id="src" class="cf">
+            <form action="https://google.com/search" target="_blank" method="get" id="fr" onclick="fbi()">
+            <button class="material-icons-outlined" id="btn_src">cari</button>
+              <input id="i" name="q" type="text" placeholder="Mau Cari Apa ?" required>
+            </form>
+          </div>
+          
+          <div id="detail_char" class="detail">
+            <p>Nama Karakter : <span id="Name"></span></p>
+            <p>Dari Anime : <span id="anime"></span></p>
+            <p>Pasangan : <span id="cp"></span></p>
+          </div>
+    </div>
+    
+    <!-- >
+    <footer><p>With By <a href="https://github.com/Mr-ParadoX13">Mr.ParadoX</a><br>All Right Reserved</p></footer>
+  </div>
+  <!-- Project -->
+  <script src="main.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Fungsi.js"></script>
+  <script type="text/javascript" charset="utf-8" src="FBI.js"></script>
+</body>
+</html>
+
+
+<!--
+This Project Created By : Mr.ParadoX-13
+Use MiT License :)
+So enjoy Using / Remake / Rebuild this google chan ^_^
+-->
+
+
+<!-- END OF FILES -->
