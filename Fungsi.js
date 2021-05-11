@@ -126,7 +126,7 @@ function f16(){
 function f17(){
   hero_name.innerHTML="Sayu Ogiwara (Bukan LonT !)"
   Name.innerHTML="Sayu Ogiwara"
-  anime.innerHTML="Hige Wo Suru Soshite Joshikousei Wo Hirou"
+  anime.innerHTML="HigeHiro"
   cp.innerHTML=owner
   hero.src="https://media.tenor.com/images/6a40bc14843055d3b846b2841c8f5a63/tenor.gif"
 }
@@ -178,7 +178,7 @@ function flogin(){
   arti.href=("https://www.primbon.com/arti_nama.php?nama1="+n+"&proses=+Submit%21+")
 }
 function acak(){
- let item = ["gif/tohka.gif","gif/zero2.gif","https://i.imgur.com/rMP03JO.gif","https://i.imgur.com/M2iFFuY.gif","https://media1.tenor.com/images/3d22991dc651df8a101413aa508e60b2/tenor.gif?itemid=14210742","https://media.tenor.com/images/783dfd9ad2e915ff19187ce61ff2a46d/tenor.gif","https://i.imgur.com/GYgCRau.gif","gif/kaori.gif","https://media1.tenor.com/images/6b7cb32636a9cb6e22f86f0a87c80870/tenor.gif?itemid=17412395","gif/sagiri.gif","gif/toga.gif","gif/shiina.gif","gif/akeno.gif","gif/tsukasa.gif"]
+ let item = ["gif/tohka.gif","gif/zero2.gif","https://i.imgur.com/rMP03JO.gif","https://i.imgur.com/M2iFFuY.gif","https://media1.tenor.com/images/3d22991dc651df8a101413aa508e60b2/tenor.gif?itemid=14210742","https://media.tenor.com/images/783dfd9ad2e915ff19187ce61ff2a46d/tenor.gif","https://i.imgur.com/GYgCRau.gif","gif/kaori.gif","https://media1.tenor.com/images/6b7cb32636a9cb6e22f86f0a87c80870/tenor.gif?itemid=17412395","gif/sagiri.gif","gif/toga.gif","gif/shiina.gif","gif/akeno.gif","gif/tsukasa.gif","https://media.tenor.com/images/6a40bc14843055d3b846b2841c8f5a63/tenor.gif","gif/asia.gif"]
 var hasil_acak = item[Math.floor(Math.random() * item.length)]
 hero_name.innerHTML="Auk deh, kan acak ^_^"
 Name.innerHTML="-"
