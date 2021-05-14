@@ -144,6 +144,13 @@ function T_ul2(){
   up2.innerHTML = "(Close)"
   up2.style.fontSize="15px"
 }
+function T_ul3(){
+  ul3.style.display="block"
+  let foot = document.querySelector('.footer-side')
+  foot.style.transform="translateX(100%)"
+  up3.innerHTML = "(Close)"
+  up3.style.fontSize="15px"
+}
 function tot(){
   ul1.style.display="none"
   let foot = document.querySelector('.footer-side')
@@ -156,6 +163,12 @@ function tot2(){
   let foot = document.querySelector('.footer-side')
   foot.style.transform="translateX(0)"
   up2.innerHTML=""
+}
+function tot3(){
+  ul3.style.display="none"
+  let foot = document.querySelector('.footer-side')
+  foot.style.transform="translateX(0)"
+  up3.innerHTML=""
 }
 function flogin(){
   let n = nama.value

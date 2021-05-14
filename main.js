@@ -28,15 +28,23 @@ const detik = new Date().getSeconds()
   let waktu = (jam+":"+menit+":"+detik)
 },1000)
 
+gproto.addEventListener('click',function(){
+  fr.action="https://google.com/search"
+  fr.name="q"
+})
 
+dproto.addEventListener('click',function(){
+  fr.action="https://duckduckgo.com/?"
+  fr.name="q"
+})
 
+wproto.addEventListener('click',function(){
+  web()
+})
 
-
-
-
-
-
-
+function web(){
+  document.location.href=("https://"+i.value)
+}
 
 
 
