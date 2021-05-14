@@ -94,5 +94,25 @@ if(input == "Nekopoi"){
   blok()
 }else if(input == "NUKLIR CODE"){
   blok()
-}else if(input == "nuklir code"){}
+}else if(input == "nuklir code"){
+  blok()
+}else if(input == "Doujindesu.info"){
+  blok()
+}else if(input == "xnxx.com"){
+    blok()
+}else if(input == "XNXX.com"){
+    blok()
+}else if(input == "simontok.com"){
+    blok()
+}else if(input == "103.194.170.153"){
+    blok()
+}else if(input == "simontok"){
+    blok()
+}else if(input == "SIMONTOK"){
+    blok
+}else if(input == "SIMONTOK.com"){
+    blok()
+}else if(input == "Simontok.com"){
+    blok()
 }
+}// end function
