@@ -22,6 +22,24 @@ Don't Remove This Part !
   display: none;
 }
 /* Style */
+@media screen and (min-width: 480px) {
+ .container{
+   display: none;
+ }
+ .maxsize{
+   display: block;
+   text-align: center;
+   border: solid 1px;
+   width: 250px;
+   height: 250px;
+   margin: auto;
+ }
+}
+@media only screen and (max-width: 480px) {
+.maxsize{
+  display: none;
+}
+}
 #a{
   height: 30px;
   background-color: #0CC83A;
@@ -60,7 +78,6 @@ Don't Remove This Part !
 .container{
   max-width: 100%;
   overflow-x: hidden;
-  overflow-y: scroll;
   position: relative;
   z-index: 99999999999;
 }
@@ -216,6 +233,14 @@ nav a{
   background-color: #00FFCD;
   padding: 20px;
   font-size: 15px;
+  border: solid 0.5px #000;
+  transition: 0.5s;
+}
+.hmm:hover{
+  border-radius: 30px;
+  position: relative;
+  z-index: 10000;
+  box-shadow: 0px 0px 18px #000;
 }
 .top-side{
   position: relative;
@@ -223,6 +248,7 @@ nav a{
 }
 #side ul{
   display: none;
+  transition: 0.6s;
 }
 #side ul , #side ul li{
   padding: 20px;
@@ -235,11 +261,18 @@ nav a{
 }
 #side ul li{
   position: relative;
+  background-color: #EDFF05;
+  color: #21C8FF;
+  transition: 0.6s;
+  border: solid 0.5px #000;
 }
 #side ul li:hover{
   border-radius: 50px;
   background-color: #21C8FF;
   padding: 20px;
+  box-shadow: 0px 0px 15px #000;
+  position: relative;
+  z-index: 10000;
 }
 #side ul li:hover a {
   color: #ECFE19;
@@ -259,6 +292,9 @@ footer p,footer a {
 a:hover,a:visited,a:active {
   text-decoration: underline;
   color: #FF1ACC;
+}
+#sts{
+  font-size: 10px;
 }
 #login{
   position: absolute;
@@ -353,9 +389,14 @@ a:hover,a:visited,a:active {
   background: white;
   border-radius: 50%;
   border: solid 1px #18DDB3;
+  transition: 0.5s;
+  border: solid 2px #000;
 }
 .proto:hover{
-  box-shadow: 0px 0px 5px black;
+  box-shadow: 0px 0px 15px black;
+  width: 40px;
+  height: 40px;
+  border: solid 0.5px #000;
 }
 /* End Of File
 Created By : Mr.ParadoX-13

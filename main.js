@@ -1,4 +1,4 @@
-
+const input = i.value;
 // Function For Toggle Side bar
 menu.addEventListener('click',function(){
    if (menu.style.transform == "rotate(0deg)") {
@@ -26,25 +26,101 @@ const jam = new Date().getHours()
 const menit = new Date().getMinutes()
 const detik = new Date().getSeconds()
   let waktu = (jam+":"+menit+":"+detik)
+  time.innerHTML=waktu
 },1000)
-
 gproto.addEventListener('click',function(){
   fr.action="https://google.com/search"
-  fr.name="q"
+  i.name="q"
+  i.placeholder="Cari di Google"
 })
 
 dproto.addEventListener('click',function(){
   fr.action="https://duckduckgo.com/?"
-  fr.name="q"
+  i.name="q"
+  i.placeholder="Cari di DuckDuckGo"
 })
 
 wproto.addEventListener('click',function(){
-  web()
+  document.location.href=("https://"+i.value)
 })
 
-function web(){
-  document.location.href=("https://"+i.value)
+yproto.addEventListener('click',function(){
+  fr.action="https://id.search.yahoo.com/search"
+  i.name="q"
+  i.placeholder="Cari di Yahoo"
+})
+bproto.addEventListener('click',function(){
+  fr.action="https://bing.com/search"
+  i.name="q"
+  i.placeholder="Cari di Bing"
+})
+SEproto.addEventListener('click',function(){
+  fr.action="https://www.searchencrypt.com/search"
+  i.name="q"
+  i.placeholder="Cari di Search encrypt"
+})
+yxproto.addEventListener('click',function(){
+  fr.action="https://yandex.com/search/touch?"
+  i.name="text"
+  i.placeholder="Cari di Yandex"
+})
+ecoproto.addEventListener('click',function(){
+  fr.action="https://www.ecosia.org/search"
+  i.placeholder="Cari di Ecosia"
+  i.name="q"
+})
+Aproto.addEventListener('click',function(){
+  fr.action="https://www.ask.com/web"
+  i.name="q"
+  i.placeholder="Cari di Ask"
+})
+ytproto.addEventListener('click',function(){
+  fr.action="https://m.youtube.com/results"
+  i.name="search_query"
+  i.placeholder="Cari di YouTube"
+})
+
+pyproto.addEventListener('click',function(){
+  fr.action="https://play.google.com/store/search"
+  i.name="q"
+  i.placeholder="Cari di Playstore"
+})
+kproto.addEventListener('click',function(){
+  fr.action="https://kusonime.com/"
+  i.name="s"
+  i.placeholder="Cari di Kusonime"
+})
+sameproto.addEventListener('click',function(){
+  fr.action="https://samehadaku.vip/"
+  i.name="s"
+  i.placeholder="Cari di Samehadaku"
+})
+function hoverBtnWeb(){
+  if(input == ""){
+  i.placeholder="Masukan Alamat Website"
+  }
+  setTimeout(function(){
+    i.placeholder="Mau Cari Apa ?"
+  },1000)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
