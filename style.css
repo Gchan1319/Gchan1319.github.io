@@ -65,11 +65,11 @@ Don't Remove This Part !
   font-family: 'Times New Roman', Times, serif;
   text-shadow: 3px 3px #CBF707;
 }
-#up2,#up,#up3{
+#up,#up2,#up3,#up4,#up5,#up6{
   z-index: 9999;
   position: relative;
 }
-#up2:hover,#up:hover,#up3:hover{
+#up2:hover,#up:hover,#up3:hover,#up4:hover,#up5:hover,#up6:hover,#up7:hover{
   color: red;
 }
 * {
@@ -260,6 +260,7 @@ nav a{
 }
 #side ul li{
   position: relative;
+  z-index: 10000;
   background-color: #EDFF05;
   color: #21C8FF;
   transition: 0.6s;
