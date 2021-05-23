@@ -189,6 +189,9 @@ function flogin(){
   if(n == ""){
     nama.placeholder = ("Harap isikan nama anda !")
     login.style.display="block"
+  }else if(n.length>8){
+    alert("Nama Panggilan aja sayang :v");
+    login.style.display="block"
   }else if(u == ""){
     login.style.display="block"
   }else{
@@ -201,10 +204,16 @@ function flogin(){
   if(n == "Admin" && u == 15){
   sts.innerHTML=("Fian | "+u+" Tahun")
   fr.onclick=""
-  i_user.style.background="url(img/Sayu.jpg)"
+  uf.src="img/gw.jpg"
+  }else if(u>20){
+    alert("oh tidak, ada om² !!\nAnda akan dikeluarkan dari gchan segera !");
+    setTimeout(function(){
+      alert("maaf yah om :)")
+      document.location.href="https://null";
+    }, 500)
   }else{
     sts.innerHTML = (n+" | "+u+" Tahun")
-    i_user.style.background="url(img/Sayu.jpg)"
+    uf.src="img/gw.jpg"
   }
   welkom.innerHTML = ("Welcome "+n + " " + "Senpai")
   arti.href=("https://www.primbon.com/arti_nama.php?nama1="+n+"&proses=+Submit%21+")
