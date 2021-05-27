@@ -1,0 +1,1 @@
+function Normal(){let a=document.calc.txt.value;if(a==""){i.placeholder='Masukan input terlebih dahulu'}else{document.calc.txt.value=eval(calc.txt.value);i.style.fontSize='20px';setTimeout(function(){i.style.fontSize='10px'},500);}}
