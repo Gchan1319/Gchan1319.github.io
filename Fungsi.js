@@ -192,7 +192,6 @@ function flogin(){
   }else if(n.length>8){
     alert("Nama Panggilan aja sayang :v");
     login.style.display="block"
-    flog.action=""
     n=""
     u=""
     sts.innerHTML = (n+" | "+u)
