@@ -1,5 +1,5 @@
 // Please Don't Remove This Part :v
-const owner = ('<a href="https://www.instagram.com/himitsu_000" target="_blank">Fian Senpai</a>')
+const owner = ('<a href="https://www.instagram.com/himitsu_000" target="_blank">Fian Senpai</a>');
 // All Function For Pages
 function f1(){
   hero_name.innerHTML="Yatogami Tohka"
@@ -192,6 +192,10 @@ function flogin(){
   }else if(n.length>8){
     alert("Nama Panggilan aja sayang :v");
     login.style.display="block"
+    flog.action=""
+    n=""
+    u=""
+    sts.innerHTML = (n+" | "+u)
   }else if(u == ""){
     login.style.display="block"
   }else{
@@ -211,9 +215,12 @@ function flogin(){
       alert("maaf yah om :)")
       document.location.href="https://null";
     }, 500)
-  }else{
-    sts.innerHTML = (n+" | "+u+" Tahun")
+  }else if(u!=""&&n!=""){
+    let result = (n+" | "+u+" Tahun")
+    sts.innerHTML = result
     uf.src="img/gw.jpg"
+  }else{
+    uf.src="img/UserNone.png"
   }
   welkom.innerHTML = ("Welcome "+n + " " + "Senpai")
   arti.href=("https://www.primbon.com/arti_nama.php?nama1="+n+"&proses=+Submit%21+")

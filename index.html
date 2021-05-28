@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Google Chan v2.1</title>
+  <meta content="Gchan / google chan adalah sebuah website untuk melakukan request kepada web yang memiliki kemampuan untuk 'search engine', atau anda bisa menggunakan layanan aplikasi berbasis website yang tersedia disini :)" name="description" />
+  <title>Google Chan v2.2</title>
   
   <!-- HTML -->
   
@@ -16,6 +16,7 @@
 </head>
 <body>
   <img class="maxsize" src="img/Rotate.gif" alt="rotate your phone !" />
+  
   <div class="container" id="container">
       <div id="a"></div>
   <marquee id="song"></marquee>
@@ -98,13 +99,13 @@
   <!--- login --->
   <div id="login">
     <h1>Masukan Data Diri !</h1>
-    <form accept-charset="utf-8" action="Simpan.php" method="POST">
+    <form accept-charset="utf-8" action="simpan.php" target="#" method="POST" id="flog">
     <label>Nama :</label>
-    <input type="text/submit/hidden/button/image" id="nama" value="" placeholder="masukan nama anda !" required/>
+    <input type="text" id="nama" name="myname" value="" placeholder="masukan nama anda !" required/>
     <label>Umur :</label>
-    <input name="" id="umur" value="" placeholder="masukan umur anda !" type="number" />
-    </form>
+    <input type="text" name="myage" id="umur" value="" placeholder="masukan umur anda !" />
     <button type="submit" onclick="flogin()">Selesai</button>
+    </form>
   </div>
   <nav class="cf">
       <!--
@@ -140,6 +141,7 @@
             <p>Pasangan : <span id="cp"></span></p>
           </div>
     </div>
+</div>
     
     <!-- >
     <footer><p>With By <a href="https://github.com/Mr-ParadoX13">Mr.ParadoX</a><br>All Right Reserved</p></footer>
