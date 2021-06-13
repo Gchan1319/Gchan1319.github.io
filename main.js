@@ -116,8 +116,10 @@ if (document.layers)
 else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
 document.oncontextmenu=new Function("return false")
 
-
-
+setTimeout(function(){
+  let loader = document.getElementsByClassName('preloader')[0]
+  loader.style.display="none"
+},1500)
 
 
 

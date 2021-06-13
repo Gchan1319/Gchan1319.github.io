@@ -33,16 +33,49 @@ Don't Remove This Part !
  .maxsize{
    display: block;
    text-align: center;
-   border: solid 1px;
+   margin: auto;
+ }
+ .maxsize img{
    width: 250px;
    height: 250px;
-   margin: auto;
  }
 }
 @media only screen and (max-width: 480px) {
 .maxsize{
   display: none;
 }
+}
+.preloader {
+  position: absolute;
+  z-index: 999999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  display: flex;
+}
+.loader {
+  border: 9px solid #f3f3f3; /* Light grey */
+  border-top: 9px solid #05FFF5; /* Blue */
+  border-bottom: 9px solid #05FF55;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+.c-load {
+  align-content: center;
+  margin: auto;
+}
+.text-loader {
+  margin: auto;
+  font-size: 15px;
+  margin-top: 10px;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 #a{
   height: 30px;
@@ -83,7 +116,7 @@ Don't Remove This Part !
   max-width: 100%;
   overflow-x: hidden;
   position: relative;
-  z-index: 99999999999;
+  z-index: 10;
 }
 nav {
   width: 100%;
@@ -110,8 +143,8 @@ nav a{
   background-color: white;
 }
 #menu {
-  width: 50px;
-  height: 50Px;
+  width: 30px;
+  height: 30Px;
   position: absolute;
   right: 20px;
   top: 20px;
@@ -208,11 +241,13 @@ nav a{
   width: cover;
   box-sizing: border-box;
   padding: 10px;
-  background-color: #00FFCD;
+  background-color: #0EFFFE;
 }
 .hero {
-  width: 100%;
+  width: 98%;
   height: 250px;
+  border: solid 3px #000;
+  border-radius: 20px;
 }
 .konten{
   height: 800px;
@@ -263,7 +298,7 @@ nav a{
 }
 #side ul li{
   position: relative;
-  z-index: 10000;
+  z-index: 11;
   background-color: #EDFF05;
   color: #21C8FF;
   transition: 0.6s;
@@ -275,7 +310,7 @@ nav a{
   padding: 20px;
   box-shadow: 0px 0px 15px #000;
   position: relative;
-  z-index: 10001;
+  z-index: 13;
 }
 #side ul li:hover a {
   color: #ECFE19;
@@ -284,7 +319,7 @@ footer{
   background-color: #000000;
   text-align: center;
   position: absolute;
-  z-index: 99999999999;
+  z-index: 10;
   bottom: 0;
   width: 100%;
 }
