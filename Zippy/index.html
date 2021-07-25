@@ -28,10 +28,15 @@
       text-align: center;
     }
   </style>
+  <script type="text/javascript" charset="utf-8">
+    function hide(){
+      pop.style.display="none";
+    }
+  </script>
 </head>
 
 <body>
-  <div id="pop">Tap Your Screen</div>
+<div id="pop" onclick="hide()">Tap Your Screen</div>
   <h1 class="mid">hehe boy</h1>
   <video id="vid" width="100%" height="250" autoplay muted loop>
     <source src="../prank/hehe.mp4" type="video/mp4">
@@ -54,10 +59,7 @@
       setInterval(function() {
         sound.play()
       }, 10000)
-    }
-    pop.addEventListener('click',function(){
-      pop.style.display="none"
-    })
+     }
   </script>
 </body>
 
