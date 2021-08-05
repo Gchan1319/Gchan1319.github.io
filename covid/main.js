@@ -13,11 +13,12 @@ jd.innerHTML=("Mengambil data dari "+counter+" Negara")
 console.log(counter)
  var i = item[counter]
 $.getJSON(`https://disease.sh/v3/covid-19/countries/${i}`,function(data){
-  let bendera = data.countryInfo.flag
-  let kasus = data.cases
-  let kematian = data.deaths
-  let sembuh = data.recovered
-  $("#daftar").append(`<div class="col md-15"><div class="card kartu mb-3" id="${data.country}"><img src="${bendera}" class="card-img-top" alt="${data.country}"><div class="card-body"><h5 class="card-title">${data.country}</h5><p>Kasus : ${kasus.toLocaleString()}</p><p>kematian : ${kematian.toLocaleString()}</p><p>sembuh : ${sembuh.toLocaleString()}</p><p class="card-text">populasi : ${data.population}</p></div></div></div>`)
+  let bendera = data.countryInfo.flag;
+  let kasus = data.cases;
+  let kematian = data.deaths;
+  let sembuh = data.recovered;
+  let populasi = data.population;
+  $("#daftar").append(`<div class="col md-15"><div class="card kartu mb-3" id="${data.country}"><img src="${bendera}" class="card-img-top" alt="${data.country}"><div class="card-body"><h5 class="card-title">${data.country}</h5><p>Kasus : ${kasus.toLocaleString()}</p><p>kematian : ${kematian.toLocaleString()}</p><p>sembuh : ${sembuh.toLocaleString()}</p><p class="card-text">populasi : ${populasi.toLocaleString()}</p></div></div></div>`)
 });
 }
 },)
@@ -25,6 +26,10 @@ $.getJSON(`https://disease.sh/v3/covid-19/countries/${i}`,function(data){
 function fetch(){
   let i = document.getElementById('input').value;
   let apa = document.getElementById(`${i}`)
+  if(apa==undefined){
+    alert("404\nnegara ["+i+"] tidak ditemukan !")
+  }else{
+  document.location.href=`#${i}`
   apa.style.position="relative"
   apa.style.backgroundColor="yellow"
   apa.style.boxShadow="0px 0px 15px black"
@@ -33,4 +38,5 @@ setTimeout(function(){
   apa.style.backgroundColor="#fff"
   apa.style.boxShadow="none"
 },3000)
+}
 }
