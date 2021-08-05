@@ -91,7 +91,7 @@ kproto.addEventListener('click',function(){
   i.placeholder="Cari di Kusonime"
 })
 sameproto.addEventListener('click',function(){
-  fr.action="https://samehadaku.vip/"
+  fr.action="https://samehadaku.sbs/"
   i.name="s"
   i.placeholder="Cari di Samehadaku"
 })

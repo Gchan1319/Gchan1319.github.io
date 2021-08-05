@@ -281,7 +281,9 @@ function muteMusic(){
   },500)
 }
 
-
+function geser() {
+   side.style.transform="translateX(100%)";
+}
 
 
 // End Of File

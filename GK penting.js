@@ -10,4 +10,4 @@ ecoproto.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvtAuMWHuOo9
 ytproto.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGr1kNfQ6lqM4ijVY74MrcNMtbMFhyJ-zU7NH_dE99bhaLGOVON0uHyJU&s=10"
 pyproto.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfhiex-hnATTQ3YS5DKI45WGnGuXo5aF-NIw&usqp=CAU"
 kproto.src="https://kusonime.com/wp-content/uploads/2017/07/cropped-KUSONIME-Funcion-32x32.png"
-sameproto.src="https://samehadaku.vip/wp-content/uploads/2020/04/cropped-download-1-192x192.jpg"
+sameproto.src="https://samehadaku.sbs/wp-content/uploads/2020/04/cropped-download-1-192x192.jpg"
