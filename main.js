@@ -106,7 +106,6 @@ function hoverBtnWeb(){
 
 // mematikan klik kanan
 var message="Function Disabled";
-////////////////
 function clickIE() {if (document.all) {(message);return false;}}
 function clickNS(e) {if
 (document.layers||(document.getElementById&&!document.all)) {
@@ -116,12 +115,9 @@ if (document.layers)
 else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
 document.oncontextmenu=new Function("return false")
 
-setTimeout(function(){
-  let loader = document.getElementsByClassName('preloader')[0]
-  loader.style.display="none"
-},1500)
-
-
+$(document).ready(function(){
+  $(".preloader").css("display",none)
+})
 
 
 
