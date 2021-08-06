@@ -114,10 +114,9 @@ if (document.layers)
 {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
 else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
 document.oncontextmenu=new Function("return false")
-
-$(document).ready(function(){
-  $(".preloader").css("display",none)
-})
+setTimeout(function(){
+ preloader.style.display="none";
+},2500)
 
 
 

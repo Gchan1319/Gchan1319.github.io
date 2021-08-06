@@ -64,6 +64,10 @@ Don't Remove This Part !
   height: 30px;
   animation: spin 1s linear infinite;
 }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 .c-load {
   align-content: center;
   margin: auto;
@@ -72,10 +76,6 @@ Don't Remove This Part !
   margin: auto;
   font-size: 15px;
   margin-top: 10px;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 #a{
   height: 30px;
