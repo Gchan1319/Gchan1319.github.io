@@ -1,9 +1,6 @@
 .kartu {
   transition: 1s;
 }
-.kartu {
-  opacity: 0;
-}
 body {
   position: relative;
 }
@@ -46,4 +43,8 @@ body {
   right: 0;
   text-align: center;
   opacity: 0;
+}
+.auk {
+  color: #000;
+  opacity: 1;
 }
