@@ -1,182 +1,134 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta content="Gchan / google chan adalah sebuah website untuk melakukan request kepada web yang memiliki kemampuan untuk 'search engine', atau anda bisa menggunakan layanan aplikasi berbasis website yang tersedia disini :)" name="description" />
-  <title>Google Chan v2.2</title>
-  
-  <!-- js -->
+<html>
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="img/Sayu.jpg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="Gchan / google chan adalah sebuah website untuk melakukan request kepada web yang memiliki kemampuan untuk 'search engine', atau anda bisa menggunakan layanan aplikasi berbasis website yang tersedia disini" name="description" />
+    <title>Gchan New v1.0</title>
+            <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- icon -->
+    <link rel="shortcut icon" href="https://gchan1319.github.io/img/gw.jpg"/>
+    <!-- css inner -->
+    <style type="text/css" media="all">
+      .spinner {
+      border: 9px solid #f3f3f3; /* Light grey */
+      border-top: 9px solid #05FFF5; /* Blue */
+      border-bottom: 9px solid #05FF55;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      top: 48%;
+      left: 46%;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </head>
-<body>
-  <div class="preloader" id="preloader">
-    <div class="c-load">
-     <div class="loader"></div>
-      <h1 class="text-loader">loading
-     </h1>
-    </div>
-   </div>
-  <div class="maxsize">
-  <h1>change screen to 1 scale / change your phone on potrait mode</h1>
-  <img src="img/Rotate.gif" alt="rotate your phone !" />
-  <p id="w"></p>
+<body id="body" class="relative">
+  <div style="z-index:999;width:100%;height:100%;background-color:#fff;position:absolute;top:0;bottom:0;left:0;right:0;" id="preload">
+    <div class="spinner"></div>
   </div>
-  <div class="container" id="container">
-      <div id="a"></div>
-  <marquee id="song"></marquee>
-  <div id="side">
-    <div class="top-side">
-    <div class="i-user" id="i_user">
-      <img style="width: 100%;height: 100%;border-radius: 50%;" src="img/UserNone.png" id="uf" alt="user" />
-    </div>
-    <h4 id="sts">Belum Login</h4>
-    </div>
-    <div class="hmm" id="hmm1" onclick="T_ul()">
-      Pilih Karakter <p ondblclick="tot()" id="up" style="display: inline;"></p>
-    <ul id="ul1" class="a">
-      <li onclick="acak()"><a href="#">Acak Aja</a></li>
-      <li onclick="f1()"><a href="#">Yatogami Tohka</a></li>
-      <li onclick="f2()"><a href="#">Zero Two</a></li>
-      <li onclick="f3()"><a href="#">Nakano Ichika</a></li>
-      <li onclick="f4()"><a href="#">Nakano Nino</a></li>
-      <li onclick="f5()"><a href="#">Nakano Miku</a></li>
-      <li onclick="f6()"><a href="#">Nakano Yotsuba</a></li>
-      <li onclick="f7()"><a href="#">Nakano Itsuki</a></li>
-      <li onclick="f8()"><a href="#">Miyazono Kaori</a></li>
-      <li onclick="f9()"><a href="#">Mizuhara Chizuru</a></li>
-      <li onclick="f10()"><a href="#">Miyamizu Mitsuha</a></li>
-      <li onclick="f11()"><a href="#">Izumi Sagiri</a></li>
-      <li onclick="f12()"><a href="#">Toga Himiko</a></li>
-      <li onclick="f13()"><a href="#">Mashiro Shiina</a></li>
-      <li onclick="f14()"><a href="#">Akeno Himejima</a></li>
-      <li onclick="f15()"><a href="#">Yuzaki Tsukasa</a></li>
-      <li onclick="f16()"><a href="#">Asia Arigento</a></li>
-      <li onclick="f17()"><a href="#">Sayu Ogiwara</a></li>
-    </ul>
-    </div>
-    
-    <div class="hmm" id="donasi" onclick="T_ul2()">
-      Donasi <p id="up2" ondblclick="tot2()" style="display:inline;"></p>
-      <ul id="ul2">
-        <li><a href="donasi/Gopay.html">Gopay</a></li>
-        <li><a href="donasi/Pulsa.html">Pulsa</a></li>
-        <li><a href="https://saweria.co/GchanDonate">Saweria</a></li>
-        <li><a href="donasi/Dana.html">Dana</a></li>
+  <nav class="navbar mb-3 navbar-expand-lg navbar-dark bg-primary navbar-expand-sm" id="nav">
+  <div class="container-fluid">
+    <a class="navbar-brand dropdown-toggle" id="login-toggle" onclick="login()"><img id="logo" src="img/UserNone.png" width="50" height="50" alt="" class="rounded-circle d-inline-block align-text-top" /><a>
+    <button  class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <!-- dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><p class="dropdown-item">Application :</p></li>
+            <li><a class="dropdown-item" href="./Kalkulator">Kalkulator</a></li>
+            <li><a class="dropdown-item" href="./copas-font">Copas Font</a></li>
+            <li><a class="dropdown-item" href="./Stop-watch">Stop Watch</a></li>
+            <li><a class="dropdown-item" href="./covid">Covid Tracker</a></li>
+            <li><hr class="dropdown-division"></li>
+            <li><p class="dropdown-item">Donate :</p></li>
+            <li><a class="dropdown-item" href="./donasi/Dana.html">Dana</a></li>
+            <li><a href="./donasi/Gopay.html" class="dropdown-item">Gopay</a></li>
+            <li><a href="./donasi/Pulsa.html" class="dropdown-item">Pulsa</a></li>
+            <li><hr class="dropdown-division"/></li>
+          </ul>
+        </li>
       </ul>
-    </div>
-    
-    <div class="hmm" onclick="T_ul3()">Mesin Pencari <p id="up3" ondblclick="tot3()" style="display:inline;"></p>
-    <ul id="ul3">
-      <img onclick="geser()" class="proto" src="" alt="google"id="gproto" />
-      <img onclick="geser()"  class="proto" src="" alt="DuckDuckGo" id="dproto" />
-      <img onclick="geser()" class="proto" src="" alt="Yahoo" id="yproto"/>
-      <img onclick="geser()" class="proto" src="" alt="bing" id="bproto"/>
-      <img onclick="geser()" class="proto" src="" alt="search encrypt" id="SEproto" />
-      <img onclick="geser()" class="proto" src="" alt="yandex" id="yxproto" />
-      <img onclick="geser()" class="proto" src="" alt="Ask" id="Aproto" />
-      <img onclick="geser()" class="proto" src="" alt="ecosia" id="ecoproto"/>
-      <img onclick="geser()" class="proto" src="" alt="YouTube" id="ytproto" />
-      <img onclick="geser()" class="proto" src="" alt="playstore" id="pyproto"/>
-      <img onclick="geser()" class="proto" src="" alt="kusonime" id="kproto" />
-      <img onclick="geser()" class="proto" src="" alt="samehadaku" id="sameproto"/>
-    </ul>
-    </div>
-    
-    <div class="hmm" onclick="T_ul4()">
-        Aplikasi <p id="up4" ondblclick="tot4()" style="display:inline;"></p>
-        <ul id="ul4">
-            <li><a href="./copas-font">Copas Font</a></li>
-            <li><a href="./Kalkulator">Kalkulator</a></li>
-            <li><a href="./Stop-watch">Stop Watch</a></li>
-            <li><a href="./covid">Covid Tracker</a></li>
-        </ul>
-    </div>
-    
-    <div class="footer-side">
-      <p id="time"></p>
-      <p>Contact Me On :</p>
-      <a href="https://www.instagram.com/himitsu_000/"><img src="img/Ig.png"class="a" alt="fb" /></a>
-      <a href="https://github.com/Mr-ParadoX13"><img src="img/Git.png" alt="github" /></a>
-      <a href="https://api.whatsapp.com/send/?phone=6285895811075&text&app_absent=0"> <img src="img/wa.jpg" alt="wa" /></a>
+      <form onclick="fbi()" id="fr" class="d-flex" action="https://google.com/search" target="_blank" method="get">
+        <input id="i" name="q" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+      </form>
     </div>
   </div>
-  
-  <!--- login --->
-  <div id="login">
-    <h1>Masukan Data Diri !</h1>
-    <form accept-charset="utf-8" id="flog">
-    <label>Nama :</label>
-    <input type="text" id="nama" value="" placeholder="masukan nama anda !" required/>
-    <label>Umur :</label>
-    <input type="number" id="umur" value="" placeholder="masukan umur anda !" />
-    </form>
-   <button type="submit" onclick="flogin()">Selesai</button>
+</nav>
+<div id="login_s" class="container-fluid mb-3 d-none bg-info clearfix fixed-top">
+  <div id="L1">
+    <h4 class="text-light text-center mt-5">Login :</h4>
+    <label class="d-block" for="nama">nama :</label>
+    <input type="text" name="" id="nama" value="" class="form-control L-input" />
+     <label for="umur">umur :</label>
+     <input type="number" name="" id="umur" value="" class="form-control L-input" />
+     <button onclick="login_send()" class="btn btn-outline-dark float-end mt-2 mb-2" type="button">Selesai</button>
+     </div>
+     <div class="d-none" id="L2">
+       <h4 class="mt-5 text-light text-center">Data Login :</h4>
+       <label for="user" class="form-control mb-3">Username : <p class="d-inline" id="user"></p></label>
+       <label for="user" class="form-control mb-3">Age : <p class="d-inline" id="age"></p></label>
+       <button type="button" class="btn btn-outline-dark float-end mb-3" onclick="login()">close</button>
+     </div>
+</div>
+<div class="container-fluid">
+<div class="border border-5 text-center">
+<div class="input-group absolute-top">
+  <select class="form-select bg-light" id="inputGroupSelect01" aria-label="Example select with button addon">
+    <option selected>Pilih Search Engine</option>
+    <option value="google">google</option>
+    <option value="duck">duckDuckGo</option>
+    <option value="yahoo">yahoo</option>
+    <option value="yandex">yandex</option>
+    <option value="bing">bing</option>
+    <option value="youtube">youtube</option>
+    <option value="playstore">playstore</option>
+    <option value="ecosia">ecosia</option>
+    <option value="kusonime">kusonime</option>
+    <option value="ask">ask</option>
+    <option value="samehadaku">samehadaku</option>
+  </select>
+  <button class="btn btn-outline-secondary" onclick="pilih()" type="button">plih</button>
   </div>
-  <nav class="cf">
-      <!--
-    <div id="btn_music">
-      <audio id="aud"></audio>
-      <button id="btn1"type="submit" onclick="playMusic()"</button>
-        <button type="submit" id="btn2" onclick="muteMusic()"></button>
-      
-    </div> 
-    -->
-    <a id="arti" href="#"><h1 id="welkom">My Search engine</h1></a>
-    <div id="menu">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.2em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1536 1280"><path d="M1536 1088v128q0 26-19 45t-45 19H64q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19H64q-26 0-45-19T0 704V576q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19H64q-26 0-45-19T0 192V64q0-26 19-45T64 0h1408q26 0 45 19t19 45z" fill="#626262"/>
-    </div>
-  </nav>
-  
-    <div class="header">
-      <img class="hero" alt="hero gif" id="hero">
-      <h1 id="hero_name"></h1>
-    </div>
-    <div class="konten cf">
-          <div id="src" class="cf">
-            <form action="https://google.com/search" target="_blank" method="get" id="fr" onclick="fbi()">
-            <button id="btn_web"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS26bLy9ZpMrZ4DM-eM1B4wUB0tiERTLGy95A&usqp=CAU" alt="web" onmouseover="hoverBtnWeb()" id="wproto" /></button>
-            <button class="material-icons-outlined" id="btn_src">cari</button>
-              <input id="i" name="q" type="text" placeholder="Cari di Google">
-            </form>
-          </div>
-          
-          <div id="detail_char" class="detail">
-            <p>Nama Karakter : <span id="Name"></span></p>
-            <p>Dari Anime : <span id="anime"></span></p>
-            <p>Pasangan : <span id="cp"></span></p>
-          </div>
-    </div>
+  <img style="display:none;" class="img-fluid mx-auto" id="hero" alt="waifu" />
+  </div>
+    <figure class="mt-3 text-center">
+      <figcaption class="blockquote-footer text-auto">
+        Source Image by : <a class="text-decoration-none" href="https://api.waifu.pics/sfw/waifu">API Waifu</a>
+      </figcaption>
+    </figure>
 </div>
 
-    <!-- >
-    <footer><p>With By <a href="https://github.com/Mr-ParadoX13">Mr.ParadoX</a><br>All Right Reserved</p></footer>
-  </div>
-  <!-- Project -->
-  <script src="main.js"></script>
-  <script src="GK penting.js"></script>
-  <script type="text/javascript" charset="utf-8" src="Fungsi.js"></script>
-  <script type="text/javascript" charset="utf-8" src="FBI.js"></script>
-  <script type="text/javascript" charset="utf-8">
-    w.innerHTML=("Your width now is : "+screen.width+" | "+"Your Height now is : "+screen.height)
-  </script>
-  <!-- jQuery -->
+<div class="container-fluid bg-dark text-light text-center">
+  <p>© Copyright 2021, By <a class="text-decoration-none warning" href="https://github.com/Mr-Paradox13">Fian</a></a></p>
+</div>
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- my script -->
+    <script src="newGchan.js" type="text/javascript" charset="utf-8"></script>
+    <script src="FBI.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
-
-
-<!--
-This Project Created By : Mr.ParadoX-13
-Use MiT License :)
-So enjoy Using / Remake / Rebuild this google chan ^_^
--->
-
-
-<!-- END OF FILES -->

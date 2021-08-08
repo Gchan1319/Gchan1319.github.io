@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="Gchan / google chan adalah sebuah website untuk melakukan request kepada web yang memiliki kemampuan untuk 'search engine', atau anda bisa menggunakan layanan aplikasi berbasis website yang tersedia disini :)" name="description" />
+  <title>Google Chan v2.2</title>
+  
+  <!-- js -->
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/Sayu.jpg">
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <div class="c-load">
+     <div class="loader"></div>
+      <h1 class="text-loader">loading
+     </h1>
+    </div>
+   </div>
+  <div class="maxsize">
+  <h1>change screen to 1 scale / change your phone on potrait mode</h1>
+  <img src="img/Rotate.gif" alt="rotate your phone !" />
+  <p id="w"></p>
+  </div>
+  <div class="container" id="container">
+      <div id="a"></div>
+  <marquee id="song"></marquee>
+  <div id="side">
+    <div class="top-side">
+    <div class="i-user" id="i_user">
+      <img style="width: 100%;height: 100%;border-radius: 50%;" src="img/UserNone.png" id="uf" alt="user" />
+    </div>
+    <h4 id="sts">Belum Login</h4>
+    </div>
+    <div class="hmm" id="hmm1" onclick="T_ul()">
+      Pilih Karakter <p ondblclick="tot()" id="up" style="display: inline;"></p>
+    <ul id="ul1" class="a">
+      <li onclick="getWaifu()"><a href="#">Acak Aja</a></li>
+      <li onclick="f1()"><a href="#">Yatogami Tohka</a></li>
+      <li onclick="f2()"><a href="#">Zero Two</a></li>
+      <li onclick="f3()"><a href="#">Nakano Ichika</a></li>
+      <li onclick="f4()"><a href="#">Nakano Nino</a></li>
+      <li onclick="f5()"><a href="#">Nakano Miku</a></li>
+      <li onclick="f6()"><a href="#">Nakano Yotsuba</a></li>
+      <li onclick="f7()"><a href="#">Nakano Itsuki</a></li>
+      <li onclick="f8()"><a href="#">Miyazono Kaori</a></li>
+      <li onclick="f9()"><a href="#">Mizuhara Chizuru</a></li>
+      <li onclick="f10()"><a href="#">Miyamizu Mitsuha</a></li>
+      <li onclick="f11()"><a href="#">Izumi Sagiri</a></li>
+      <li onclick="f12()"><a href="#">Toga Himiko</a></li>
+      <li onclick="f13()"><a href="#">Mashiro Shiina</a></li>
+      <li onclick="f14()"><a href="#">Akeno Himejima</a></li>
+      <li onclick="f15()"><a href="#">Yuzaki Tsukasa</a></li>
+      <li onclick="f16()"><a href="#">Asia Arigento</a></li>
+      <li onclick="f17()"><a href="#">Sayu Ogiwara</a></li>
+    </ul>
+    </div>
+    
+    <div class="hmm" id="donasi" onclick="T_ul2()">
+      Donasi <p id="up2" ondblclick="tot2()" style="display:inline;"></p>
+      <ul id="ul2">
+        <li><a href="donasi/Gopay.html">Gopay</a></li>
+        <li><a href="donasi/Pulsa.html">Pulsa</a></li>
+        <li><a href="https://saweria.co/GchanDonate">Saweria</a></li>
+        <li><a href="donasi/Dana.html">Dana</a></li>
+      </ul>
+    </div>
+    
+    <div class="hmm" onclick="T_ul3()">Mesin Pencari <p id="up3" ondblclick="tot3()" style="display:inline;"></p>
+    <ul id="ul3">
+      <img onclick="geser()" class="proto" src="" alt="google"id="gproto" />
+      <img onclick="geser()"  class="proto" src="" alt="DuckDuckGo" id="dproto" />
+      <img onclick="geser()" class="proto" src="" alt="Yahoo" id="yproto"/>
+      <img onclick="geser()" class="proto" src="" alt="bing" id="bproto"/>
+      <img onclick="geser()" class="proto" src="" alt="search encrypt" id="SEproto" />
+      <img onclick="geser()" class="proto" src="" alt="yandex" id="yxproto" />
+      <img onclick="geser()" class="proto" src="" alt="Ask" id="Aproto" />
+      <img onclick="geser()" class="proto" src="" alt="ecosia" id="ecoproto"/>
+      <img onclick="geser()" class="proto" src="" alt="YouTube" id="ytproto" />
+      <img onclick="geser()" class="proto" src="" alt="playstore" id="pyproto"/>
+      <img onclick="geser()" class="proto" src="" alt="kusonime" id="kproto" />
+      <img onclick="geser()" class="proto" src="" alt="samehadaku" id="sameproto"/>
+    </ul>
+    </div>
+    
+    <div class="hmm" onclick="T_ul4()">
+        Aplikasi <p id="up4" ondblclick="tot4()" style="display:inline;"></p>
+        <ul id="ul4">
+            <li><a href="./copas-font">Copas Font</a></li>
+            <li><a href="./Kalkulator">Kalkulator</a></li>
+            <li><a href="./Stop-watch">Stop Watch</a></li>
+            <li><a href="./covid">Covid Tracker</a></li>
+        </ul>
+    </div>
+    
+    <div class="footer-side">
+      <p id="time"></p>
+      <p>Contact Me On :</p>
+      <a href="https://www.instagram.com/himitsu_000/"><img src="img/Ig.png"class="a" alt="fb" /></a>
+      <a href="https://github.com/Mr-ParadoX13"><img src="img/Git.png" alt="github" /></a>
+      <a href="https://api.whatsapp.com/send/?phone=6285895811075&text&app_absent=0"> <img src="img/wa.jpg" alt="wa" /></a>
+    </div>
+  </div>
+  
+  <!--- login --->
+  <div id="login">
+    <h1>Masukan Data Diri !</h1>
+    <form accept-charset="utf-8" id="flog">
+    <label>Nama :</label>
+    <input type="text" id="nama" value="" placeholder="masukan nama anda !" required/>
+    <label>Umur :</label>
+    <input type="number" id="umur" value="" placeholder="masukan umur anda !" />
+    </form>
+   <button type="submit" onclick="flogin()">Selesai</button>
+  </div>
+  <nav class="cf">
+      <!--
+    <div id="btn_music">
+      <audio id="aud"></audio>
+      <button id="btn1"type="submit" onclick="playMusic()"</button>
+        <button type="submit" id="btn2" onclick="muteMusic()"></button>
+      
+    </div> 
+    -->
+    <a id="arti" href="#"><h1 id="welkom">My Search engine</h1></a>
+    <div id="menu">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.2em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1536 1280"><path d="M1536 1088v128q0 26-19 45t-45 19H64q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19H64q-26 0-45-19T0 704V576q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19H64q-26 0-45-19T0 192V64q0-26 19-45T64 0h1408q26 0 45 19t19 45z" fill="#626262"/>
+    </div>
+  </nav>
+  
+    <div class="header">
+      <img class="hero" alt="hero gif" id="hero">
+      <h1 id="hero_name"></h1>
+    </div>
+    <div class="konten cf">
+          <div id="src" class="cf">
+            <form action="https://google.com/search" target="_blank" method="get" id="fr" onclick="fbi()">
+            <button id="btn_web"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS26bLy9ZpMrZ4DM-eM1B4wUB0tiERTLGy95A&usqp=CAU" alt="web" onmouseover="hoverBtnWeb()" id="wproto" /></button>
+            <button class="material-icons-outlined" id="btn_src">cari</button>
+              <input id="i" name="q" type="text" placeholder="Cari di Google">
+            </form>
+          </div>
+          
+          <div id="detail_char" class="detail">
+            <p>Nama Karakter : <span id="Name"></span></p>
+            <p>Dari Anime : <span id="anime"></span></p>
+            <p>Pasangan : <span id="cp"></span></p>
+          </div>
+    </div>
+</div>
+
+    <!-- >
+    <footer><p>With By <a href="https://github.com/Mr-ParadoX13">Mr.ParadoX</a><br>All Right Reserved</p></footer>
+  </div>
+  <!-- Project -->
+  <script src="main.js"></script>
+  <script src="GK penting.js"></script>
+  <script type="text/javascript" charset="utf-8" src="Fungsi.js"></script>
+  <script type="text/javascript" charset="utf-8" src="FBI.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    w.innerHTML=("Your width now is : "+screen.width+" | "+"Your Height now is : "+screen.height)
+  </script>
+  <!-- jQuery
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    -->
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf-8">
+    function getWaifu(){
+      $.getJSON("https://api.waifu.pics/sfw/waifu",function(data){
+        let url = data.url
+        hero.src=url;
+        console.log(data)
+      })
+      }
+      getWaifu();
+    </script>
+</body>
+</html>
+
+
+<!--
+This Project Created By : Mr.ParadoX-13
+Use MiT License :)
+So enjoy Using / Remake / Rebuild this google chan ^_^
+-->
+
+
+<!-- END OF FILES -->
