@@ -2,10 +2,15 @@ function GetWaifu(){
   $.getJSON("https://api.waifu.pics/sfw/waifu",function(data){
         let url = data.url;
         hero.src=url;
+        $("#hero").ready(function(){
+          $("#hero").fadeOut()
+          $("#hero").fadeIn()
+        })
+        sc.href=url;
   })
 }
 GetWaifu();
-
+setInterval(GetWaifu,10000)
 function pilih(){
   let a = inputGroupSelect01.value
   switch (a) {
@@ -76,14 +81,19 @@ $(document).ready(function(){
 })
 function login(){
   login_s.classList.toggle("d-none");
+  login_s.classList.toggle("opacity-0");
 }
 function login_send(){
   if(nama.value != "" && umur.value != ""){
   login_s.classList.toggle("d-none");
+  login_s.classList.toggle("opacity-0");
   L1.classList.toggle("d-none");
   L2.classList.toggle("d-none");
-  user.innerHTML=nama.value;
-  age.innerHTML=umur.value;
+  let nameP = nama.value;
+  let umurP = umur.value;
+  let namaR = nameP.slice(0, 27);
+  user.innerHTML=namaR;
+  age.innerHTML=umurP;
   logo.src="img/gw.jpg";
   }else{
     nama.classList.toggle("is-invalid");
@@ -92,3 +102,21 @@ function login_send(){
     umur.placeholder="Masukan Umur !"
   }
 }
+/*
+function youtube(){
+  let text = i.value
+  alert(text)
+  $.getJSON(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${text}&type=video&key=AIzaSyBq4LasG4soWNJVa9dFqEdpVZpmb27No3s`,function(data){
+    let item = data.items
+    for (var i = 0; i < 20; i++) {
+      let items = item[i];
+      let vidId = items.id.videoId
+      let url = `https://www.youtube.com/embed/${vidId}?rel=0`
+      console.log(url)
+      let snipet = items.snippet
+      $('#content').append(`<h5 class="text-center"></h5><iframe class="ratio ratio-16x9" src="${url}" allowfullscreen></iframe>`)
+    }
+  }).catch(Error => console.log(Error))
+  
+}
+*/
