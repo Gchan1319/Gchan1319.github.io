@@ -1,16 +1,18 @@
 function GetWaifu(){
   $.getJSON("https://api.waifu.pics/sfw/waifu",function(data){
         let url = data.url;
+        let hero = document.getElementById("hero")
         hero.src=url;
         $("#hero").ready(function(){
-          $("#hero").fadeOut()
-          $("#hero").fadeIn()
+          $("#hero").fadeOut();
+          $("#hero").fadeIn();
         })
         sc.href=url;
+        console.log(url);
   })
 }
 GetWaifu();
-setInterval(GetWaifu,10000)
+setInterval(GetWaifu,15000);
 function pilih(){
   let a = inputGroupSelect01.value
   switch (a) {
@@ -101,6 +103,24 @@ function login_send(){
     nama.placeholder="Masukan Nama !"
     umur.placeholder="Masukan Umur !"
   }
+}
+let audio = document.getElementById("music")
+function mplay(){
+  audio.play();
+  audio.loop=true;;
+  $(".music img").attr("src","img/music.png");
+  $(".music").attr("onclick","pauseMusic()");
+  var x = setInterval(warnai,100);
+}
+function pauseMusic(){
+  audio.pause();
+  $(".music img").attr("src","img/music-mute.png");
+  $(".music").attr("onclick","mplay()")
+}
+function warnai(){
+    var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    var res = randomColor;
+    $(".music").css("background-color",res);
 }
 /*
 function youtube(){
