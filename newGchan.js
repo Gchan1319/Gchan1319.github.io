@@ -119,6 +119,7 @@ function mplay(){
   $(".musicbtn img").attr("src","img/music.png");
   $(".musicbtn").attr("onclick","pauseMusic()");
   $(".musicbtn").addClass("music");
+  $(".musicbtn").removeClass("musicmuted");
   var x = setInterval(warnai,100);
 }
 function pauseMusic(){
