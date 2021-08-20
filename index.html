@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta name="theme-color" content="#08FFB7"/>
+    <meta name="theme-color" content="#0BF3C5"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Gchan / google chan adalah sebuah website untuk melakukan request kepada web yang memiliki kemampuan untuk 'search engine', atau anda bisa menggunakan layanan aplikasi berbasis website yang tersedia disini" name="description" />
@@ -35,11 +35,11 @@
         transition: 1s;
         z-index: 9999;
       }
-      #login_s,.nav {
+      #login_s, .nav,.musicmuted {
         background: rgb(101,233,255);
         background: linear-gradient(90deg, rgba(101,233,255,1) 9%, rgba(3,255,236,1) 37%, rgba(25,255,214,1) 69%, rgba(17,255,225,1) 100%);
       }
-      .music {
+      .musicbtn {
         position: fixed;
         left: 25px;
         top: 150px;
@@ -47,7 +47,12 @@
         height: 50px;
         background-color: #15DE94;
         border-radius: 50%;
+      }
+      .musicmuted {
         animation: spin 5s linear infinite;
+      }
+      .music {
+        animation: spin 2s linear infinite;
       }
       #nav {
         z-index: 1;
@@ -105,9 +110,9 @@
 <div id="login_s" class="opacity-0 container-fluid mb-3 d-none clearfix fixed-top">
   <div id="L1">
     <h4 class="text-light text-center mt-5">Login :</h4>
-    <label class="d-block" for="nama">nama :</label>
+    <label class="d-block" for="nama">Username :</label>
     <input type="text" name="" id="nama" value="" class="form-control L-input" />
-     <label for="umur">umur :</label>
+     <label for="umur" class="d-block">Age :</label>
      <input type="number" name="" id="umur" value="" class="form-control L-input" />
      <button onclick="login_send()" class="btn btn-outline-dark float-end mt-2 mb-2" type="button">Selesai</button>
      </div>
@@ -115,6 +120,8 @@
        <h4 class="mt-5 text-light text-center">Data Login :</h4>
        <label for="user" class="form-control mb-3">Username : <p class="d-inline" id="user"></p></label>
        <label for="user" class="form-control mb-3">Age : <p class="d-inline" id="age"></p></label>
+       <label for="ip" class="form-control mb-3">IP Address : <p class="d-inline" id="ip"></p></label>
+       <label for="device" class="form-control mb-3">Device : <p class="d-inline" id="device"></p></label>
        <button type="button" class="btn btn-outline-dark float-end mb-3" onclick="login()">close</button>
      </div>
 </div>
@@ -122,7 +129,7 @@
 <div class="border border-5 text-center">
 <div class="input-group absolute-top">
   <select class="form-select bg-light" id="inputGroupSelect01" aria-label="Example select with button addon">
-    <option selected>Pilih Search Engine</option>
+    <option selected>Choose Search Engine</option>
     <option value="google">google</option>
     <option value="duck">duckDuckGo</option>
     <option value="yahoo">yahoo</option>
@@ -152,21 +159,20 @@
   <source src="sound/MyWar.mp3" type="audio/mpeg" />
 </audio>
 
-<div class="music" onclick="mplay()"><img src="img/music-mute.png" class="img-fluid rounded rounded-circle" alt="" /></div>
+<div class="musicbtn" onclick="mplay()"><img src="img/music-mute.png" class="img-fluid rounded rounded-circle" alt="playButton" /></div>
 
 <div class="container-fluid">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
-      <a href="#" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+      <a href="https://github.com/Mr-Paradox13" target="_blank" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
         <img width="25px" height="25px" class="rounded" src="img/gw.jpg" alt="me" />
       </a>
       <span class="text-muted">&copy; 2021 , Made By Fian</span>
     </div>
 
     <ul class="icon-footer col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="https://instagram.com/himitsu_000" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/fianskuy" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
     </ul>
   </footer>
 </div>
