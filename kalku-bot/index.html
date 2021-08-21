@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  <!-- Custom Styles -->
+  <style type="text/css">
+    body {
+    background-color: #112559;
+    box-sizing: border-box;
+}
+#container {
+  display: grid;
+  align-self: center;
+  width: 100%;
+}
+#i {
+  width: auto;
+  height: 100px;
+  margin-bottom: 50px;
+  color: #000000;
+}
+#i:hover,#result:hover,button:hover {
+  outline: none;
+}
+
+button {
+  float: right;
+  width: 30%;
+  padding: 15px 30px;
+  outline: none;
+  border: none;
+  background: none;
+  background-color: #ACD507;
+  margin: 5px;
+  border-radius: 5px;
+  transition: .7s;
+  text-align: center;
+}
+button:hover{
+  background-color: #07D5D4;
+  border-radius: 50px;
+}
+#result {
+  width: auto;
+  height: 50px;
+  background-color: #fff;
+  line-height: 50px;
+  text-align: center;
+}
+#footer
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(100%)
+}
+  </style>
+</head>
+<body>
+  <div id="container">
+    <button type="submit" onclick="his()">remove</button>
+    <textarea placeholder="input your text .." id="i" Rowa="8" cols="40"></textarea>
+    <button type="submit" onclick="tx()">hitung</button>
+    <textarea id="result" readonly></textarea>
+    <button type="submit" onclick="hb()">remove</button>
+  </div>
+  <div id="footer">
+    <p>Created By <a href="https://github.com/Mr-Paradox13" style="text-decoration: none;color: deeppink;">Mr.ParadoX</a><br/><d style="font-family: 'Courier New', Courier, monospace;">On juni 2021<d></d></p>
+  </div>
+  <script src="main"></script>
+  <script type="text/javascript" charset="utf-8">
+  // ini jangan di ubah ngab biar gak error
+  function tx() {
+  var i = document.getElementById('i').value
+  i.toString()
+  // penghapusan
+  let a = i.replace(/×/i,"*");
+  let b = a.replace(/÷/i,"/");
+  let c = b.replace(/x/i,"*");
+  let d = eval(c)
+  result.value=(d)
+}
+result.addEventListener('click',function(){
+    let text = ("Berhasil disalin !")
+    result.select();
+    document.execCommand('copy');
+    let isinya = result.value;
+    result.value=text;
+    setTimeout(() => {tx()},700);
+})
+function hb(){
+  result.value="text dibersihkan !"
+  setTimeout(function(){result.value=""},800)
+}
+function his(){
+  i.value="";
+  i.placeholder="input dibersihkan !"
+  setTimeout(function(){i.placeholder="input your text .."},800)
+}
+setTimeout(function(){footer.style.opacity="1";footer.style.transition="3s";footer.style.transform="translateY(0)"},1000)
+/* setInterval(function(){result.style.backgroundColor="#FF6D6D";i.style.backgroundColor="#FF6D6D"},701)
+setInterval(function(){result.style.backgroundColor="#13C1E4";i.style.backgroundColor="#13C1E4"},800)
+setInterval(function(){result.style.backgroundColor="#FEFF02";i.style.backgroundColor="#FEFF02"},903) */
+  </script>
+</body>
+</html>
+
+<!-- Dibuat oleh Mr.ParadoX ~ Ryuu -->
