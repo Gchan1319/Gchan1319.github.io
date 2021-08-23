@@ -1,8 +1,10 @@
+const hub = new RandomHub();
+// console.log(hub.getRandomHub());
 function GetWaifu(){
   $.getJSON("https://api.waifu.pics/sfw/waifu",function(data){
         let url = data.url;
         let hero = document.getElementById("hero")
-        hero.src=url;
+        $("#hero").attr("src",url)
         $("#hero").ready(function(){
           $("#hero").fadeOut();
           $("#hero").fadeIn();
@@ -11,8 +13,11 @@ function GetWaifu(){
         console.log(url);
   })
 }
+function zoom(){
+  $("#content").addClass("zooming");
+}
 GetWaifu();
-setInterval(GetWaifu,15000);
+var x = setInterval(GetWaifu,15000);
 function pilih(){
   let a = inputGroupSelect01.value
   switch (a) {
@@ -74,7 +79,9 @@ function pilih(){
       
   }
 }
-
+function cek(){
+  $("#login_s").css("max-height","0");
+}
 $("#hero").ready(function(){
   hero.style.display="block";
 })
@@ -82,35 +89,65 @@ $(document).ready(function(){
   preload.style.display="none";
 })
 function login(){
-  login_s.classList.toggle("d-none");
-  login_s.classList.toggle("opacity-0");
+  $("#login_s").css("max-height","100%");
+  $("#login_s").toggleClass("sctop")
+}
+function hentong(){
+  let anu = hub.getRandomHub();
+  sc.href=anu;
+  hero.src=anu;
+  console.log(anu);
 }
 function login_send(){
-  if(nama.value != "" && umur.value != ""){
-  login_s.classList.toggle("d-none");
-  login_s.classList.toggle("opacity-0");
-  L1.classList.toggle("d-none");
-  L2.classList.toggle("d-none");
+  let info = $.getJSON("log.json",function(data){
+  let username = data.username
+  if(nama.value == username){
+    $("#login_s").css("max-height","0");
+    $("#L1").addClass("d-none");
+    $("#L2").toggleClass("d-none");
+    let nameP = nama.value;
+    let umurP = umur.value;
+    let namaR = nameP.slice(0, 27);
+    user.innerHTML = namaR;
+    age.innerHTML = umurP;
+    $("#fr").attr("onclick","")
+    logo.src="https://images.tokopedia.net/img/cache/500-square/product-1/2018/3/21/26586253/26586253_a72dedbd-44e4-424d-a375-195b61102de5_500_500.png.webp"
+    clearInterval(x);
+    hentong();
+    setInterval(hentong,10000);
+     $.getJSON("https://api.db-ip.com/v2/free/self", function(data) {
+       console.log(data)
+       let ip = data.ipAddress;
+       let country = data.countryName
+       $("#ip").append(`${ip} From ${country}`);
+     })
+     let piranti = navigator.userAgent;
+     $("#device").append(`${piranti}`);
+  }else if(nama.value != "" && umur.value != ""){
+  $("#login_s").css("max-height","0");
+  $("#L1").addClass("d-none");
+  $("#L2").toggleClass("d-none");
   let nameP = nama.value;
   let umurP = umur.value;
   let namaR = nameP.slice(0, 27);
   user.innerHTML=namaR;
   age.innerHTML=umurP;
   logo.src="img/gw.jpg";
-  $.getJSON("https://api.db-ip.com/v2/free/self",function(data){
-    console.log(data)
-    let ip = data.ipAddress;
-    let country = data.countryName
-    $("#ip").append(`${ip} From ${country}`);
-  })
-  let device = navigator.userAgent;
-  $("#device").append(`${device}`)
+   $.getJSON("https://api.db-ip.com/v2/free/self", function(data) {
+     console.log(data)
+     let ip = data.ipAddress;
+     let country = data.countryName
+     $("#ip").append(`${ip} From ${country}`);
+   })
+   let piranti = navigator.userAgent;
+   $("#device").append(`${piranti}`);
   }else{
     nama.classList.toggle("is-invalid");
     umur.classList.toggle("is-invalid");
     nama.placeholder="Enter Your Name !"
     umur.placeholder="Enter Your Age !"
   }
+  });
 }
 let audio = document.getElementById("music")
 function mplay(){
@@ -120,7 +157,7 @@ function mplay(){
   $(".musicbtn").attr("onclick","pauseMusic()");
   $(".musicbtn").addClass("music");
   $(".musicbtn").removeClass("musicmuted");
-  var x = setInterval(warnai,100);
+  setInterval(warnai,100);
 }
 function pauseMusic(){
   audio.pause();
