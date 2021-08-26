@@ -1,5 +1,3 @@
-const hub = new RandomHub();
-// console.log(hub.getRandomHub());
 function GetWaifu(){
   $.getJSON("https://api.waifu.pics/sfw/waifu",function(data){
         let url = data.url;
@@ -92,12 +90,7 @@ function login(){
   $("#login_s").css("max-height","100%");
   $("#login_s").toggleClass("sctop")
 }
-function hentong(){
-  let anu = hub.getRandomHub();
-  sc.href=anu;
-  hero.src=anu;
-  console.log(anu);
-}
+
 function login_send(){
   let info = $.getJSON("log.json",function(data){
   let username = data.username
@@ -108,13 +101,10 @@ function login_send(){
     let nameP = nama.value;
     let umurP = umur.value;
     let namaR = nameP.slice(0, 27);
-    user.innerHTML = namaR;
+    user.innerHTML = "Admin"
     age.innerHTML = umurP;
-    $("#fr").attr("onclick","")
-    logo.src="https://images.tokopedia.net/img/cache/500-square/product-1/2018/3/21/26586253/26586253_a72dedbd-44e4-424d-a375-195b61102de5_500_500.png.webp"
-    clearInterval(x);
-    hentong();
-    setInterval(hentong,10000);
+    $("#fr").attr("onclick","");
+    $("#logo").attr("src","img/gw.jpg");
      $.getJSON("https://api.db-ip.com/v2/free/self", function(data) {
        console.log(data)
        let ip = data.ipAddress;
@@ -132,7 +122,7 @@ function login_send(){
   let namaR = nameP.slice(0, 27);
   user.innerHTML=namaR;
   age.innerHTML=umurP;
-  logo.src="img/gw.jpg";
+  $("#logo").attr("src","img/gw.jpg");
    $.getJSON("https://api.db-ip.com/v2/free/self", function(data) {
      console.log(data)
      let ip = data.ipAddress;
