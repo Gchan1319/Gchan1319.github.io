@@ -1,3 +1,4 @@
+title.innerHTML="kalkulator v2.0";
 function Normal(){
   let a=document.calc.txt.value;
 if(a==""){
