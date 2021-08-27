@@ -3,8 +3,10 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #49409B;
     position: relative;
+    background-image: url("https://i.waifu.pics/8-xAiM1.png");
+    background-position: center;
+    background-size: cover;
 }
 
 *{
@@ -23,26 +25,38 @@ body {
   position: relative;
 }
 .calculator .value{
-  grid-column: span 5;
+  grid-column: span 4;
   height: 100px;
   text-align: right;
-  border: none;
   outline: none;
-  padding: 10px;
-  font-size: 10px;
+  border: none;
+  font-size: 1em;
+  padding: 0px 12.5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  
+}
+.calculator #i{
+  overflow-x: scroll;
+}
+.calculator .preview {
+  height: 30px;
+  font-size: 0.8em;
+  border-bottom: solid 0.4px #000;
+  margin-top: -40px;
 }
 .calculator span{
   display: grid;
-  width: 60px;
-  height: 60px;
-  color: #fff;
-  background: #0c2835;
-  place-items: center;
-  border: solid 2px #2B3174;
-}
-.calculator span:hover{
-  background: #ABC21C;
+  width: 80px;
+  height: 80px;
   color: #000;
+  background: #FFFFFF;
+  place-items: center;
+  font-size: 1em;
+  
+}
+.calculator .btn {
+  color: #FF8D55;
 }
 .calculator span.clear{
   grid-column: span 2;
@@ -55,6 +69,7 @@ body {
   grid-row: span 2;
   height: 120px;
 }
+
 h1{
   position: absolute;
   z-index: 99;
@@ -73,6 +88,72 @@ h1{
   top: 0;
   left: 0;
   border-radius: 50%;
+  background: rgb(101,233,255);
+  background: linear-gradient(90deg, rgba(101,233,255,1) 9%, rgba(3,255,236,1) 37%, rgba(25,255,214,1) 69%, rgba(17,255,225,1) 100%);
+  box-shadow: 0px 0px 5px #000;
+}
+.del {
+  background-color: #00EFA5;
+}
+#equal_btn span {
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: #FF8D55;
+  font-size: 2em;
+  font-weight: 2em;
+  color: #fff;
+}
+
+
+
+@media screen and (min-width: 768px){
+.calculator .value{
+  grid-column: span 4;
+  height: 150px;
+  text-align: right;
+  outline: none;
+  border: none;
+  padding: 0px 12.5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  
+}
+.calculator #i{
+  overflow-x: scroll;
+}
+.calculator .preview {
+  height: 50px;
+  border-bottom: solid 0.4px #000;
+}
+.calculator span{
+  display: grid;
+  width: 150px;
+  height: 150px;
+  color: #000;
+  background: #FFFFFF;
+  place-items: center;
+  margin:0;
+  font-size: 1.5em;
+}
+#equal_btn span {
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: #FF8D55;
+  font-size: 3em;
+  font-weight: 2em;
+  color: #fff;
+}
+
+#back{
+  width: 75px;
+  height: 75px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
   background-color: #fff;
   box-shadow: 0px 0px 5px #000;
+}
 }
