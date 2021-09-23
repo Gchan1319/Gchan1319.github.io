@@ -108,6 +108,8 @@ function login_send(){
      $.getJSON("https://api.db-ip.com/v2/free/self", function(data) {
        console.log(data)
        let ip = data.ipAddress;
+       $("#music").attr("src","sound/MyWar.mp3");
+       $("#body").append(`<div class="musicbtn musicmuted" onclick="mplay()"><img src="img/music-mute.png" class="img-fluid rounded rounded-circle" alt="playButton" /></div>`);
        let country = data.countryName
        $("#ip").append(`${ip} From ${country}`);
      })
@@ -129,6 +131,8 @@ function login_send(){
      let country = data.countryName
      $("#ip").append(`${ip} From ${country}`);
    })
+   $("#music").attr("src","sound/MyWar.mp3");
+   $("#body").append(`<div class="musicbtn musicmuted" onclick="mplay()"><img src="img/music-mute.png" class="img-fluid rounded rounded-circle" alt="playButton" /></div>`);
    let piranti = navigator.userAgent;
    $("#device").append(`${piranti}`);
   }else{
@@ -179,4 +183,8 @@ function youtube(){
   }).catch(Error => console.log(Error))
   
 }
+*/
+/*
+let Thisport = window.location.port
+$("iframe").attr("src",`https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/file/d/1G2rQ7ZgqUbRRXfF2ZaO2YRo3Y_IBy37V/view?usp=drivesdk`)
 */
