@@ -1,3 +1,62 @@
+$("#tema").attr("onclick",`ganti(${true})`);
+$("#logo").attr("src","img/UserNone-light.png");
+var cookie = Cookies.get("tema");
+if(cookie != null){
+  if(cookie == "dark"){
+    ganti(true);
+    $("#tema").attr("onclick",`ganti(${false})`);
+  }
+}
+var isLogin = false;
+function ganti(isDark){
+  if(isDark){
+  Cookies.set("tema","dark");
+  $("#tema").removeClass("moon");
+  $("#tema").attr("onclick",`ganti(${false})`);
+  $("#tema").addClass("sun");
+  $(".container").addClass("bg-dark");
+  $(".container-fluid").addClass("bg-dark");
+  $("body").addClass("bg-dark");
+  $("nav").addClass("bg-dark");
+  $("nav").removeClass("blend");
+  $(".nav").removeClass("navbar-light");
+  $(".nav").addClass("navbar-dark");
+  $("#login_s").removeClass("blend");
+  $("#login_s").addClass("bg-dark");
+  $("#login_s").addClass("text-light");
+  $(".container-fluid").addClass("text-light");
+  $(".fb").removeClass("fb-light");
+  $(".ig").removeClass("ig-light");
+  $(".fb").addClass("fb-dark");
+  $(".ig").addClass("ig-dark");
+  if(!isLogin){
+    $("#logo").attr("src","img/UserNone-dark.png");
+  }
+  }else{
+  if(!isLogin){
+  $("#logo").attr("src","img/UserNone-light.png");
+  }
+  Cookies.remove("tema");
+  $("#tema").removeClass("sun");
+  $("#tema").attr("onclick",`ganti(${true})`);
+  $("#tema").addClass("moon");
+  $(".container").removeClass("bg-dark");
+  $(".container-fluid").removeClass("bg-dark");
+  $("body").removeClass("bg-dark");
+  $("nav").removeClass("bg-dark");
+  $("nav").addClass("blend");
+  $(".nav").addClass("navbar-light");
+  $(".nav").removeClass("navbar-dark");
+  $("#login_s").addClass("blend");
+  $("#login_s").removeClass("bg-dark");
+  $("#login_s").removeClass("text-light");
+  $(".container-fluid").removeClass("text-light");
+  $(".fb").addClass("fb-light");
+  $(".ig").addClass("ig-light");
+  $(".fb").removeClass("fb-dark");
+  $(".ig").removeClass("ig-dark");
+  }
+}
 function GetWaifu(){
   $.getJSON("https://api.waifu.pics/sfw/waifu",function(data){
         let url = data.url;
@@ -109,10 +168,11 @@ function login_send(){
        console.log(data)
        let ip = data.ipAddress;
        $("#music").attr("src","sound/MyWar.mp3");
-       $("#body").append(`<div class="musicbtn musicmuted" onclick="mplay()"><img src="img/music-mute.png" class="img-fluid rounded rounded-circle" alt="playButton" /></div>`);
+       $("#body").append(`<div class="musicbtn blend musicmuted" onclick="mplay()"><img src="img/music-mute.png" class="img-fluid rounded rounded-circle" alt="playButton" /></div>`);
        let country = data.countryName
        $("#ip").append(`${ip} From ${country}`);
      })
+     isLogin = true;
      let piranti = navigator.userAgent;
      $("#device").append(`${piranti}`);
   }else if(nama.value != "" && umur.value != ""){
@@ -133,6 +193,7 @@ function login_send(){
    })
    $("#music").attr("src","sound/MyWar.mp3");
    $("#body").append(`<div class="musicbtn musicmuted" onclick="mplay()"><img src="img/music-mute.png" class="img-fluid rounded rounded-circle" alt="playButton" /></div>`);
+   isLogin = true;
    let piranti = navigator.userAgent;
    $("#device").append(`${piranti}`);
   }else{

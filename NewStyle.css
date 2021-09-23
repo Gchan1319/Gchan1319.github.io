@@ -1,0 +1,18 @@
+#tema {
+  background-color: #000;
+  border-radius: 50%;
+}
+.icon-footer li {
+  width: 30px;
+  height: 30px;
+}
+.moon {
+  background-image: url("img/moon.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.sun {
+  background-image: url("img/sun.jpg");
+  background-size: cover;
+  background-position: center;
+}

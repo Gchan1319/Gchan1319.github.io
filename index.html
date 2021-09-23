@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!-- icon -->
     <link rel="shortcut icon" href="https://gchan1319.github.io/img/gw.jpg"/>
+    <link rel="stylesheet" href="NewStyle.css" type="text/css" media="all" />
     <!-- css inner -->
     <style type="text/css" media="all">
       .spinner {
@@ -38,7 +39,7 @@
         max-height: 0;
         overflow: hidden;
       }
-      #login_s, .nav,.musicmuted {
+      .blend {
         background: rgb(101,233,255);
         background: linear-gradient(90deg, rgba(101,233,255,1) 9%, rgba(3,255,236,1) 37%, rgba(25,255,214,1) 69%, rgba(17,255,225,1) 100%);
       }
@@ -48,8 +49,9 @@
         top: 150px;
         width: 50px;
         height: 50px;
-        background-color: #15DE94;
         border-radius: 50%;
+        background: rgb(101,233,255);
+        background: linear-gradient(90deg, rgba(101,233,255,1) 9%, rgba(3,255,236,1) 37%, rgba(25,255,214,1) 69%, rgba(17,255,225,1) 100%);
       }
       .musicmuted {
         animation: spin 5s linear infinite;
@@ -60,10 +62,19 @@
       #nav {
         z-index: 1;
       }
-      .fb:hover{
+      .fb-dark {
         fill: #0A1FFF;
       }
-      .ig:hover * {
+      .ig-dark {
+        fill: url(#rg);
+      }
+      .ig-dark:hover,.fb-dark:hover {
+        fill: #fff;
+      }
+      .fb-light:hover{
+        fill: #0A1FFF;
+      }
+      .ig-light:hover{
        fill: url(#rg);
       }
       
@@ -88,10 +99,11 @@
   <div style="z-index:999;width:100%;height:100%;background-color:#fff;position:absolute;top:0;bottom:0;left:0;right:0;" id="preload">
     <div class="spinner"></div>
   </div>
-  <nav class="navbar mb-3 navbar-expand-lg navbar-light nav navbar-expand-sm" id="nav">
+  <nav class="navbar blend mb-3 navbar-expand-lg navbar-light nav navbar-expand-sm" id="nav">
   <div class="container-fluid">
-    <a class="navbar-brand dropdown-toggle" id="login-toggle" onclick="login()"><img id="logo" src="img/UserNone.png" width="50" height="50" alt="" class="rounded-circle d-inline-block align-text-top" /><a>
-    <button  class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand dropdown-toggle" id="login-toggle" onclick="login()"><img id="logo" src="" width="50" height="50" alt="" class="rounded-circle d-inline-block align-text-top" /><a>
+      
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -126,19 +138,19 @@
       </ul>
       <form onclick="fbi()" id="fr" class="d-flex" action="https://google.com/search" target="_blank" method="get">
         <input id="i" name="q" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button onclick="" id="btnsearch" class="btn btn-outline-dark" type="submit">Search</button>
+        <button onclick="" id="btnsearch" class="btn btn-outline-primary" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
-<div id="login_s" class="container-fluid mb-3 clearfix fixed-top">
+<div id="login_s" class="blend container-fluid mb-3 clearfix fixed-top">
   <div id="L1">
     <h4 class="text-light text-center mt-5">Login :</h4>
     <label class="d-block" for="nama">Username :</label>
     <input type="text" name="" id="nama" value="" class="form-control L-input" />
      <label for="umur" class="d-block">Age :</label>
      <input type="number" name="" id="umur" value="" class="form-control L-input" />
-     <button onclick="login_send()" class="btn btn-outline-dark float-end mt-2 mb-2" type="button">Selesai</button>
+     <button onclick="login_send()" class="btn btn-outline-primary float-end mt-2 mb-2" type="button">Selesai</button>
      </div>
      <div class="d-none" id="L2">
        <h4 class="mt-5 text-light text-center">Data Login :</h4>
@@ -146,7 +158,7 @@
        <label for="user" class="form-control mb-3">Age : <p class="d-inline" id="age"></p></label>
        <label for="ip" class="form-control mb-3">IP Address : <p class="d-inline" id="ip"></p></label>
        <label for="device" class="form-control mb-3">Device : <p class="d-inline" id="device"></p></label>
-       <button type="button" class="btn btn-outline-dark float-end mb-3" onclick="cek()">close</button>
+       <button type="button" class="btn btn-outline-primary float-end mb-3" onclick="cek()">close</button>
      </div>
 </div>
 <div class="container-fluid">
@@ -166,7 +178,7 @@
     <option value="ask">ask</option>
     <option value="samehadaku">samehadaku</option>
   </select>
-  <button class="btn btn-outline-secondary" onclick="pilih()" type="button">plih</button>
+  <button class="btn btn-outline-primary" onclick="pilih()" type="button">Pilih</button>
   </div>
   <div id="content" class="zooming">
     <img style="display:none;" class="img-fluid mx-auto bg-dark" id="hero" alt="waifu" />
@@ -186,12 +198,13 @@
       <a href="https://github.com/Mr-Paradox13" target="_blank" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
         <img width="25px" height="25px" class="rounded" src="img/gw.jpg" alt="me" />
       </a>
-      <span class="text-muted">&copy; <z id="fy"></z> , Made By Fian</span>
+      <span class="text-auto">&copy; <z id="fy"></z> , Made By Fian</span>
     </div>
 
     <ul class="icon-footer col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="https://instagram.com/himitsu_000" target="_blank"><svg class="bi ig" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/fianskuy" target="_blank"><svg class="bi fb" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="https://instagram.com/himitsu_000" target="_blank"><svg class="bi ig ig-light" width="100%" height="100%"><use xlink:href="#instagram"/></svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/fianskuy" target="_blank"><svg class="bi fb fb-light" width="100%" height="100%"><use xlink:href="#facebook"/></svg></a></li>
+      <li id="tema" class="ms-3 moon"></li>
     </ul>
   </footer>
 </div>
@@ -220,8 +233,11 @@
         <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./framework/js.cookie.min.js" type="text/javascript" charset="utf-8"></script>
+    <!--
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    -->
     <!-- my script -->
     <script src="newGchan.js" type="text/javascript" charset="utf-8"></script>
     <script src="FBI.js" type="text/javascript" charset="utf-8"></script>
