@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="skyblue">
+    <title>My Countdown</title>
+            <!-- bootstrap -->
+    <link href="../framework/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../framework/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <!-- my css -->
+    <style type="text/css" media="all">
+      #demo {
+        font-size: 18px;
+      }
+    </style>
+</head>
+
+<body>
+<!-- Display the countdown timer in an element -->
+<div class="container-fluid">
+  <div class="row bg-info">
+    <div class="col text-center">
+      <p id="demo" class="nav-link dropdown-toggle text-light mt-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">wait ...</p>
+           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><p id="detail_year" class="dropdown-item"></p></li>
+            <li><p id="detail_month" class="dropdown-item"></p></li>
+            <li><p id="detail_minggu" class="dropdown-item"></p></li>
+            <li><p id="detail_musim" class="dropdown-item"></p></li>
+            <li><hr class="dropdown-division"/></li>
+            <li><p id="detail_lama" class="dropdown-item"></p></li>
+            <li><p id="detail_lama_minggu" class="dropdown-item"></p></li>
+            <li><p id="detail_lama_bulan" class="dropdown-item"></p></li>
+            <li><p id="detail_lama_jam" class="dropdown-item"></p></li>
+             <li><p id="detail_lama_menit" class="dropdown-item"></p></li>
+            <li><p id="detail_lama_detik" class="dropdown-item"></p></li> 
+       </ul>
+    </div>
+  </div>
+  <div class="row text-center">
+    <h5 id="year"></h5>
+    <h5 id="day"></h5>
+    <h5 id="jam_usia"></h5>
+    <h5 id="menit_usia"></h5>
+    <h5 id="detik_usia"></h5>
+  </div>
+</div>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("July 12, 2023 06:00:00").getTime();
+var sejak = new Date("August 1, 2021 19:00:00");
+//var lahir = new Date("June 13, 2005 11:00:00");
+var lahir = new Date("sept 16, 2021 07:00:00")
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+  var lama = now - sejak;
+  var umur = now - lahir;
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  var tahun = Math.ceil(days/365.25);
+  var bulan = (tahun*12);
+  var minggu = Math.ceil(days/7);
+  var season = Math.ceil(tahun*4);
+  var lama_hari = Math.floor(lama / (1000 * 60 * 60 * 24 ));
+  var lama_minggu = Math.floor(lama_hari/7);
+  var lama_bulan = Math.floor(lama_minggu/4);
+  var selisih_jam = Math.floor((lama % (1000*60*60*24)) / (1000*60*60));
+  var lama_jam = Math.floor(lama_hari * 24 + selisih_jam);
+  var selisih_detik =Math.floor((lama % (1000 * 60)) / 1000); 
+  var lama_detik = Math.floor(lama_jam * 60 * 60 + selisih_detik);
+  var selisih_menit = Math.floor((lama % (1000 * 60 * 60)) / (1000 * 60));
+  var lama_menit = Math.floor(lama_jam * 60 + selisih_menit);
+  var hari = Math.floor(umur / (1000 * 60 * 60 * 24));
+  var jam = (hari*24+selisih_jam)
+  var menit = (jam*60);
+  var sel_detik = Math.floor((umur % (1000 * 60)) / 1000);
+  var detik = Math.floor(menit * 60 + sel_detik);
+  var tahun_umur = Math.floor(hari/365.25)
+//  var detik = ((jam*60*60)+selisih_detik)
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + " Days " + hours + " Hours "
+  + minutes + " Mins " + seconds + " Secs";
+  detail_year.innerHTML=(tahun+" Tahun Lagi !")
+  detail_month.innerHTML=(bulan+" Bulan Lagi !")
+  detail_minggu.innerHTML=(minggu+" Minggu Lagi !")
+  detail_musim.innerHTML=(season+" Season Lagi !")
+  detail_lama.innerHTML=("Sudah "+lama_hari+" Hari Disini !");
+  detail_lama_minggu.innerHTML=("Sudah "+lama_minggu+" Minggu Disini !");
+  detail_lama_bulan.innerHTML=("Sudah "+lama_bulan+" Bulan Disini !");
+  detail_lama_jam.innerHTML=("Sudah "+lama_jam+" Jam Disini !");
+  detail_lama_menit.innerHTML=("Sudah "+lama_menit.toLocaleString()+" Menit Disini !");
+  detail_lama_detik.innerHTML=("Sudah "+lama_detik.toLocaleString()+" Detik Disini !");
+  day.innerHTML=("Hari Ke "+hari.toLocaleString());
+  jam_usia.innerHTML=("Jam Ke "+jam.toLocaleString());
+  menit_usia.innerHTML=("Menit Ke "+menit.toLocaleString());
+  detik_usia.innerHTML=("Detik ke "+detik.toLocaleString());
+  year.innerHTML=("Tahun ke "+tahun_umur);
+  // console.log(selisih_detik+" | "+selisih_menit);
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+</script>
+</body>
+
+</html>
