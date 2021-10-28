@@ -2,7 +2,6 @@ var colorSchemeDark = matchMedia('(prefers-color-scheme: dark)').matches;
 $("#tema").attr("onclick",`ganti(${true})`);
 $("#logo").attr("src","img/UserNone-light.png");
 var IsOnline = navigator.onLine;
-IsOnline = false
 var meta = document.querySelector("meta[name=theme-color]");
 var cookie_theme = Cookies.get("tema");
 var IsAlreadyLogin = Cookies.get("AlreadyLogin");
