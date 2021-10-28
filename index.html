@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta name="theme-color" content="#0BF3C5"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="Gchan / google chan adalah sebuah website untuk melakukan request kepada web yang memiliki kemampuan untuk 'search engine', atau anda bisa menggunakan layanan aplikasi berbasis website yang tersedia disini" name="description" />
-    <title>Gchan New v1.0</title>
+    <title>Google Chan v3.2</title>
             <!-- bootstrap -->
+            <!---->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!-- icon -->
     <link rel="shortcut icon" href="https://gchan1319.github.io/img/gw.jpg"/>
     <link rel="stylesheet" href="NewStyle.css" type="text/css" media="all" />
+    
+    <link href="./framework/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./framework/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+   <script src="./framework/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
     <!-- css inner -->
     <style type="text/css" media="all">
       .spinner {
@@ -77,36 +81,39 @@
       .ig-light:hover{
        fill: url(#rg);
       }
-      
-   /*   .zooming img {
-  filter: brightness(100%) blur(2px) saturate(100%);
-}*/   
       #hero:hover {
        transition: all 1s  ease-in-out;
        transform-origin: center center;
        filter: brightness(100%) saturate(150%);
-}
-    .bi {
-  vertical-align: -.125em;
-}
-.sctop {
-  max-height: 0;
-}
+      }
+      .bi {
+        vertical-align: -.125em;
+      }
+      .sctop {
+        max-height: 0;
+      }
+      .dropdown-menu p:hover {
+        background-color: #fff;
+        color: #000;
+      }
     </style>
+   <!-- -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </head>
 <body id="body" class="relative">
-  <div style="z-index:999;width:100%;height:100%;background-color:#fff;position:absolute;top:0;bottom:0;left:0;right:0;" id="preload">
+  <div id="preload">
     <div class="spinner"></div>
   </div>
   <nav class="navbar blend mb-3 navbar-expand-lg navbar-light nav navbar-expand-sm" id="nav">
   <div class="container-fluid">
-    <a class="navbar-brand dropdown-toggle" id="login-toggle" onclick="login()"><img id="logo" src="" width="50" height="50" alt="" class="rounded-circle d-inline-block align-text-top" /><a>
+    <label for="nama"><a class="navbar-brand dropdown-toggle" id="login-toggle" onclick="login()"><img id="logo" src="" width="50" height="50" alt="" class="rounded-circle d-inline-block align-text-top" /><a></label>
       
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button id="btnNav" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <label for="i">
+      <span class="navbar-toggler-icon"></span></label>
+      
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="mb-2 collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -117,12 +124,16 @@
             Menu
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><hr class="dropdown-division"/></li>
             <li><p class="dropdown-item">Application :</p></li>
             <li><a class="dropdown-item" href="./Kalkulator">Kalkulator</a></li>
             <li><a class="dropdown-item" href="./copas-font">Copas Font</a></li>
             <li><a class="dropdown-item" href="./kalku-bot">Copas Kalkulator</a></li>
             <li><a class="dropdown-item" href="./Stop-watch">Stop Watch</a></li>
             <li><a class="dropdown-item" href="./covid">Covid Tracker</a></li>
+            <li><hr class="dropdown-division"/></li>
+            <li><p class="dropdown-item">Game :</p></li>
+            <li><a class="dropdown-item" href="#">Gunting,Batu,Kertas</a></li>
             <li><hr class="dropdown-division"/></li>
             <li><p class="dropdown-item">Have Fun :</p></li>
             <li><a class="dropdown-item" href="./prank">Prank</a></li>
@@ -132,18 +143,17 @@
             <li><a class="dropdown-item" href="./donasi/Dana.html">Dana</a></li>
             <li><a href="./donasi/Gopay.html" class="dropdown-item">Gopay</a></li>
             <li><a href="./donasi/Pulsa.html" class="dropdown-item">Pulsa</a></li>
-            <li><hr class="dropdown-division"/></li>
-          </ul>
+            <li><hr class="dropdown-division"/></li>          </ul>
         </li>
       </ul>
-      <form onclick="fbi()" id="fr" class="d-flex" action="https://google.com/search" target="_blank" method="get">
+     <form onclick="fbi()" id="fr" class="d-flex" action="https://google.com/search" target="_blank" method="get">
         <input id="i" name="q" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button onclick="" id="btnsearch" class="btn btn-outline-primary" type="submit">Search</button>
+        <button onclick="search()" id="btnsearch" class="btn btn-outline-primary" type="button">Search</button>
       </form>
     </div>
   </div>
 </nav>
-<div id="login_s" class="blend container-fluid mb-3 clearfix fixed-top">
+<div id="login_s" class="blend container-fluid mb-3 clearfix fixed-top overflow-hidden">
   <div id="L1">
     <h4 class="text-light text-center mt-5">Login :</h4>
     <label class="d-block" for="nama">Username :</label>
@@ -154,7 +164,7 @@
      </div>
      <div class="d-none" id="L2">
        <h4 class="mt-5 text-light text-center">Data Login :</h4>
-       <label for="user" class="form-control mb-3">Username : <p class="d-inline" id="user"></p></label>
+       <label for="user" class="form-control mb-3">Username : <p class="" id="user"></p></label>
        <label for="user" class="form-control mb-3">Age : <p class="d-inline" id="age"></p></label>
        <label for="ip" class="form-control mb-3">IP Address : <p class="d-inline" id="ip"></p></label>
        <label for="device" class="form-control mb-3">Device : <p class="d-inline" id="device"></p></label>
@@ -162,9 +172,20 @@
      </div>
 </div>
 <div class="container-fluid">
-<div class="border border-5 text-center">
-<div class="input-group absolute-top">
-  <select class="form-select bg-light" id="inputGroupSelect01" aria-label="Example select with button addon">
+  <div class="px-1 py-4 blend" id="notif">
+    Hello world !
+  </div>
+  <!-- Command
+  <div class="input-command d-none">
+    <input class="form-control bg-auto d-inline-block" type="text" name="command" id="command" value="" placeholder="input command ..." />
+    <button style="font-size:10px;" onclick="command()" class="d-inline-block btn btn-outline-primary text-auto bg-auto" type="button">Execute</button>
+  </div> 
+  -->
+  
+<div id="searchMenu" class="text-center">
+<!--
+<div class="input-group">
+  <select class="form-select absolute-top" id="inputGroupSelect01" aria-label="Example select with button addon">
     <option selected>Choose Search Engine</option>
     <option value="google">google</option>
     <option value="duck">duckDuckGo</option>
@@ -180,8 +201,9 @@
   </select>
   <button class="btn btn-outline-primary" onclick="pilih()" type="button">Pilih</button>
   </div>
+  -->
   <div id="content" class="zooming">
-    <img style="display:none;" class="img-fluid mx-auto bg-dark" id="hero" alt="waifu" />
+    <img style="display:none;" class="img-fluid mx-auto bg-auto" id="hero" alt="waifu" />
     <figure class="mt-3 text-center">
       <figcaption class="blockquote-footer text-auto">
         Source Image : <a id="sc" class="text-decoration-none" href="" target="_blank">Click This</a>
@@ -191,14 +213,37 @@
 </div>
 </div>
 <audio id="music"></audio>
-
+<div class="container-fluid" id="resultSEO">
+  <div class="float-start"></div>
+  <button type="button" class="float-end btn btn-outline-primary btn-clear" onclick="clearSearchResult()">x</button>
+</div>
+<style type="text/css" media="all">
+  .judul-search img {
+    width: 15px;
+    height: 15px;
+    margin-right: 1px;
+  }
+  .judul-search h1 {
+    font-size: 15px;
+  }
+  .search-desc p {
+    font-size: 10px;
+  }
+  a {
+    text-decoration: none;
+  }
+  .container-search {
+    margin-bottom: 3px;
+  }
+  
+</style>
 <div class="container-fluid">
   <footer class="d-flex Flex justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
       <a href="https://github.com/Mr-Paradox13" target="_blank" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        <img width="25px" height="25px" class="rounded" src="img/gw.jpg" alt="me" />
+        <img width="25px" height="25px" class="author" src="img/gw.jpg" alt="me" />
       </a>
-      <span class="text-auto">&copy; <z id="fy"></z> , Made By Fian</span>
+      <span class="text-auto">&copy; <b><z id="fy"></z></b>, Made By <a href="" class="text-decoration-none">Fian</a></span>
     </div>
 
     <ul class="icon-footer col-md-4 justify-content-end list-unstyled d-flex">
@@ -231,19 +276,22 @@
   </radialGradient>
 </svg>
         <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!-- -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./framework/js.cookie.min.js" type="text/javascript" charset="utf-8"></script>
-    <!--
+    
+    <!-- -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    -->
+    <!-- -->
     <!-- my script -->
     <script src="newGchan.js" type="text/javascript" charset="utf-8"></script>
     <script src="FBI.js" type="text/javascript" charset="utf-8"></script>
+    <script src="search.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
     let year = new Date().getFullYear();
-      $("#fy").html(year);
+    $("#fy").html(year);
+    
     </script>
 </body>
 </html>
