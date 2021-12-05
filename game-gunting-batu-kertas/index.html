@@ -99,5 +99,16 @@
   <!-- Javascript -->
    <script src="./framework/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
    <script src="main.js"></script>
+   <script type="text/javascript" charset="utf-8">
+     var isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+     if(isDark){
+       $("*:not(a,r,sb,ug,y,g,table *)").removeClass("text-light");
+       $("*:not(a,r,sb,ug,y,g,table *,#paramUser,#paramComp)").toggleClass("text-light");
+       $("*").removeClass("bg-light");
+       $("*:not(tr *)").toggleClass("bg-dark");
+       $("table").removeClass("table-light")
+       $("table").addClass("table-dark");
+     }
+   </script>
 </body>
 </html>
