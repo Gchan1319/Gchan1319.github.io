@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game: Gunting, Batu, kertas</title>
+  <!-- framework -->
+  <link rel="stylesheet" href="./framework/bootstrap.min.css" type="text/css" media="all" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="result.css">
+  <script src="./framework/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="container overflow-hidden" id="rules">
+    <div class="col">
+      <div class="row mx-auto">
+        <h1 class="mt-2">Welcome 👋</h1>
+        <p style="font-size: 17px;">
+          Ini adalah Game buatan <i><a href="https://instagram.com/himitsu_000" class="text-decoration-none">Saya</a></i>
+          <br/>
+          game ini sesungguhnya hanya <sb>gunting</sb>, <ug>batu</ug>, <g>kertas</g> biasa tetapi berbasis website dan dilakukan antara user dengan computer, yang saya ciptakan menggunakan syntax <y>javascript</y> sederhana.
+          <ul class="mx-auto" style="font-size: 15px;">
+            <b>Berikut Rules yang saya berikan :</b>
+            <li>1. <b><r>Jangan Mencuri</r></b>source code yang ada di website ini !</li>
+            <li>2. Jika anda seseorang yang sedang belajar mengenai <y>javascript</y> silahkan lihat contoh source codenya <a href="">disini..</a></li>
+            <li>3. Game ini sederhana, anda hanya diminta memilih <sb>gunting</sb>/<ug>batu</ug>/<g>kertas</g> dalam waktu 3 detik, <r>jika anda <b>tidak memilih</b> dalam 1,5 detik pertama, <y>javascript</y> akan memilihkan secara acak untuk anda,</r> tentu anda bisa merubah pilihan tersebut sempai batas waktu yabg telah di tentukan berakhir.</li>
+            <noscript><li>4. Aktifkan <y>Javascript</y> pada browser anda, <a href="https://google.com/search?q=how+to+enable+javascript+on+my+browser">click disini..</a></li></noscript>
+          </ul>
+          </p>
+          <p class="text-dark" style="font-size: 12px;text-decoration:none;">Copyright 2021, by <a href="https://github.com/Mr-Paradox13">Fian</a></p>
+        <a style="font-size:14px;" class="text-decoration-none" href="#"><input type="checkbox" class="mx-1 d-inline" onclick="oke()">I was read the rules and i'm Agree</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="col bg-light border border-dark mt-2">
+      <div class="header row mt-3 mx-auto bg-light cf border-bottom border-dark">
+        <div class="w-50 float-start text-center">
+          <p id="paramUser" class="text-center">-</p>
+          <h5 class="mt-2">User : <sc id="userScore">0</sc></h5>
+          <small class="text-muted">Opsi : <z id="userOpsi"></z></small>
+        </div>
+        <div class="w-50  float-end text-center">
+          <p id="paramComp" class="text-center">-</p>
+          <h5 class="mt-2">Computer : <sc id="compScore">0</sc></h5>
+          <small class="text-muted">Opsi : <z id="compOpsi"></z></small>
+        </div>
+      </div>
+      <div class="row mx-auto bg-light text-center px-3 text-dark">
+        <small class="my-3">Pilih Salah Satu !</small>
+        <div class="input-group cf">
+         <button onclick="sendOpsion('gunting')" class="float-start btn btn-outline-success" type="button">Gunting</button>
+         <button onclick="sendOpsion('batu')" class="mx-auto float-center btn btn-outline-info" type="button">Batu</button>
+         <button onclick="sendOpsion('kertas')" class="float-end btn btn-outline-danger" type="button">Kertas</button>
+        </div>
+        <button class="btn-outline-primary btn mx-auto mt-3" type="buton" onclick="reset()">Reset</button>
+      </div>
+      <div class="row text-center mt-2">
+        <small class="text-muted mb-2">Timeout <cd id="Time"></cd></small>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container mt-3">
+    <div class="col">
+      <div class="row bg-light text-center mx-auto cf">
+        <h4 class="mt-2">History :</h4>
+        <div class="float-start">
+           <small>User: Menang : <k id="Uwin">0</k></small>
+           <small>Kalah : <k id="Ulose">0</k></small>
+        </div>
+        <div class="float-end">
+          <small>Comp: Menang : <k id="Cwin">0</k></small>
+          <small>Kalah : <k id="Close">0</k></small>
+        </div>
+        <small>Seri : <k id="tie">0</k></small>
+        <small>Total Match : <k id="EvalGame">0</k></small>
+        <div>
+          <table class="table bordered table-striped text-center table-light" style="font-family: 'Courier New', Courier, monospace;">
+            <thead>
+              <tr>
+                <th scope="col">Ke</th>
+                <th scope="col">User</th>
+                <th scope="col">Computer</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody id="history">
+              <tr></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Javascript -->
+   <script src="./framework/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="main.js"></script>
+</body>
+</html>
